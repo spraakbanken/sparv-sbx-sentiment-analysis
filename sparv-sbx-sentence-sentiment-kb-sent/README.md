@@ -7,7 +7,7 @@
 [![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/spraakbanken/getting-started/blob/main/scorecard.md)
 [![Stage](https://img.shields.io/pypi/status/sparv-sbx-sentence-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentence-sentiment-kb-sent/)
 
-[![CI(release)](https://github.com/spraakbanken/sparv-sbx-word-prediction/actions/workflows/release-kb-bert.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-word-prediction/actions/workflows/release-kb-bert.yml)
+[![CI(release)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/release-sentence-sentiment-kb-sent.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/release-sentence-sentiment-kb-sent.yml)
 
 Plugin for applying bert masking as a [Sparv](https://github.com/spraakbanken/sparv-pipeline) annotation.
 

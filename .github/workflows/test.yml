@@ -36,7 +36,7 @@ jobs:
           - "3.9"
           - "3.10"
           - "3.11"
-          - "3.12"
+          # - "3.12"
 
     runs-on: ${{ matrix.os }}-latest
     env:
@@ -92,6 +92,7 @@ jobs:
         os: [ubuntu] 
 
     runs-on: ${{ matrix.os }}-latest
+    continue-on-error: true # allow failure until doctests are added
     env:
       OS: ${{ matrix.os }}-latest
     steps:

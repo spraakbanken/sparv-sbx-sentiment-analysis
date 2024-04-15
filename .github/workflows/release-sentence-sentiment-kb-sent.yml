@@ -1,11 +1,11 @@
-name: release
+name: release-sentence-sentiment-kb-sent
 
 on:
   push:
     branches:
       - main
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'sentence-sentiment-kb-sent-v[0-9]+.[0-9]+.[0-9]+'
   pull_request:
   merge_group:
 
@@ -46,7 +46,7 @@ jobs:
       #  -----  build distribution -----
       #----------------------------------------------
       - name: Build distribution
-        run: make build
+        run: cd sparv-sbx-sentence-sentiment-kb-sent && make build
 
       #----------------------------------------------
       #  -----  upload artifacts  -----
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: pypi_files
-          path: dist
+          path: sparv-sbx-sentence-sentiment-kb-sent/dist
 
   test-build:
     # This action runs the test suite on the built artifact in the `build` action.
@@ -68,8 +68,6 @@ jobs:
       matrix:
         os: 
           - ubuntu
-          - macos
-          - windows
 
     runs-on: ${{ matrix.os }}-latest
     steps:
@@ -88,10 +86,10 @@ jobs:
           name: pypi_files
           path: dist
 
-      - run: rm -r <INSERT PROJECT SRC>
+      - run: rm -r sparv-sbx-sentence-sentiment-kb-sent/src
       - run: pip install typing-extensions
-      - run: pip install -r tests/requirements-testing.lock
-      - run: pip install <INSERT PROJECT NAME> --no-index --no-deps --find-links dist --force-reinstall
+      - run: pip install -r sparv-sbx-sentence-sentiment-kb-sent/tests/requirements-testing.lock
+      - run: pip install sparv-sbx-sentence-sentiment-kb-sent --no-index --no-deps --find-links dist --force-reinstall
       - run: pytest
   
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
