@@ -1,0 +1,15 @@
+[project]
+name = "sparv-sbx-sentence-sentiment-workspace"
+dependencies = []
+requires-python = ">=3.8,<3.12"
+version = "0.0.0"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "-e sparv-sbx-sentence-sentiment-kb-sent @ file:///${PROJECT_ROOT}/sparv-sbx-sentence-sentiment-kb-sent",
+    "pytest>=8.1.1",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.9.0",
+    "ruff>=0.3.2",
+    "bump-my-version>=0.19.0",
+]
