@@ -57,8 +57,8 @@ help:
 	@echo ""
 
 PLATFORM := `uname -o`
-REPO := "<REPO-NAME-HERE>"
-PROJECT_SRC := "<SRC-FOLDER-HERE>"
+REPO := "sparv-sbx-sentiment-analysis"
+PROJECT_SRC := "sparv-sbx-sentence-sentiment-kb-sent/src"
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
@@ -72,8 +72,8 @@ default_cov := "--cov=${PROJECT_SRC}"
 cov_report := "term-missing"
 cov := ${default_cov}
 
-all_tests := tests
-tests := tests
+all_tests := sparv-sbx-sentence-sentiment-kb-sent/tests
+tests := sparv-sbx-sentence-sentiment-kb-sent/tests
 
 info:
 	@echo "Platform: ${PLATFORM}"
@@ -147,3 +147,15 @@ prepare-release: tests/requirements-testing.lock
 # we use lock extension so that dependabot doesn't pick up changes in this file
 tests/requirements-testing.lock: pyproject.toml
 	pdm export --dev --format requirements --output $@
+
+.PHONY: kb-bert-prepare-release
+sparv-sbx-sentence-sentiment-kb-sent-prepare-release: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
+
+update-changelog: CHANGELOG.md sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
+
+CHANGELOG.md:
+	git cliff --unreleased --prepend $@
+
+.PHONY: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
+sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md:
+	git cliff --unreleased --include-path "sparv-sbx-sentence-sentiment-kb-sent/**/*" --include-path "examples/sparv-sbx-sentence-sentiment-kb-sent/**/*" --prepend $@
