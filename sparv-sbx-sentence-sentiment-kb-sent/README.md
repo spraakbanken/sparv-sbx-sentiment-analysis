@@ -33,7 +33,7 @@ annotation exclusively by adding it as the only annotation to export under `xml_
 ```yaml
 xml_export:
     annotations:
-        - <token>:sbx_sentence_sentiment_kb_sent.word-prediction--kb-bert
+        - <token>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-bert
 ```
 
 To use it together with other annotations you might add it under `export`:
@@ -41,22 +41,13 @@ To use it together with other annotations you might add it under `export`:
 ```yaml
 export:
     annotations:
-        - <token>:sbx_sentence_sentiment_kb_sent.word-prediction--kb-bert
+        - <token>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-bert
         ...
 ```
 
 ### Configuration
 
 You can configure this plugin by the number of neighbours to generate.
-
-#### Number of Neighbours
-
-The number of neighbours defaults to `5` but can be configured in `config.yaml`:
-
-```yaml
-sbx_sentence_sentiment_kb_sent:
-    num_neighbours: 5
-```
 
 #### Number of Decimals
 
@@ -76,7 +67,7 @@ sbx_sentence_sentiment_kb_sent:
 Type | HuggingFace Model | Revision
 --- | --- | ---
 Model | [`KBLab/robust-swedish-sentiment-multiclass`](https://huggingface.co/KBLab/robust-swedish-sentiment-multiclass) | b0ec32dca56aa6182a6955c8f12129bbcbc7fdbd
-Tokenizer | same as Model  | same as Model
+Tokenizer | [`KBLab/megatron-bert-large-swedish-cased-165k`](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-165k)  | 90c57ab49e27b820bd85308a488409dfea25600d
 
 ## Changelog
 

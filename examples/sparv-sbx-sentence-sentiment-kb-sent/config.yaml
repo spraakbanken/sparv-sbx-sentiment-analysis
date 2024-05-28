@@ -10,7 +10,7 @@ export:
         - <sentence>
         # - <token:word>
         - <token>:stanza.pos
-        - <sentence>:sbx_sentence_sentiment_kb_sent.sbx-sentence-sentiment--kb-sent
+        - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
 
 sparv:
     compression: none
