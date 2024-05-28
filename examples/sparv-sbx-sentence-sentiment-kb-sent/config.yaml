@@ -1,0 +1,16 @@
+metadata:
+    id: example-sparv-sbx-sentence-kb-sent
+    language: swe
+
+import:
+    importer: text_import:parse
+
+export:
+    annotations:
+        - <sentence>
+        # - <token:word>
+        - <token>:stanza.pos
+        - <sentence>:sbx_sentence_sentiment_kb_sent.sbx-sentence-sentiment--kb-sent
+
+sparv:
+    compression: none

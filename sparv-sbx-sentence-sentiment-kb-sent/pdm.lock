@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:e2f1b35f371e06c6f8984cbf664e879ec980dd33ff1fe50a42ac2750118d45bf"
+content_hash = "sha256:ae5c879ee52fe6a0ae43754676bbb64a7960e079d7948483ac996fef40aab011"
 
 [[package]]
 name = "appdirs"
@@ -1759,6 +1759,20 @@ dependencies = [
 files = [
     {file = "sympy-1.12-py3-none-any.whl", hash = "sha256:c3588cd4295d0c0f603d0f2ae780587e64e2efeedb3521e46b9bb1d08d184fa5"},
     {file = "sympy-1.12.tar.gz", hash = "sha256:ebf595c8dac3e0fdc4152c51878b498396ec7f30e7a914d6071e674d49420fb8"},
+]
+
+[[package]]
+name = "syrupy"
+version = "4.6.1"
+requires_python = ">=3.8.1,<4"
+summary = "Pytest Snapshot Test Utility"
+groups = ["dev"]
+dependencies = [
+    "pytest<9.0.0,>=7.0.0",
+]
+files = [
+    {file = "syrupy-4.6.1-py3-none-any.whl", hash = "sha256:203e52f9cb9fa749cf683f29bd68f02c16c3bc7e7e5fe8f2fc59bdfe488ce133"},
+    {file = "syrupy-4.6.1.tar.gz", hash = "sha256:37a835c9ce7857eeef86d62145885e10b3cb9615bc6abeb4ce404b3f18e1bb36"},
 ]
 
 [[package]]
