@@ -16,13 +16,20 @@ def annotate_sentence_sentiment(
     ),
     word: sparv_api.Annotation = sparv_api.Annotation("<token:word>"),
     sentence: sparv_api.Annotation = sparv_api.Annotation("<sentence>"),
+    num_decimals_str: str = sparv_api.Config("sbx_sentence_sentiment_kb_sent.num_decimals"),
 ) -> None:
     """Sentiment analysis of sentence with KBLab/robust-swedish-sentiment-multiclass."""
+    try:
+        num_decimals = int(num_decimals_str)
+    except ValueError as exc:
+        raise sparv_api.SparvErrorMessage(
+            f"'sbx_word_prediction_kb_bert.num_decimals' must contain an 'int' got: '{num_decimals_str}'"  # noqa: E501
+        ) from exc
     sentences, _orphans = sentence.get_children(word)
     token_word = list(word.read())
     out_sentence_sentiment_annotation = sentence.create_empty_attribute()
 
-    analyzer = SentimentAnalyzer.default()
+    analyzer = SentimentAnalyzer(num_decimals=num_decimals)
 
     logger.progress(total=len(sentences))  # type: ignore
     for sent_i, sent in enumerate(sentences):

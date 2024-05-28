@@ -27,8 +27,8 @@ class SentimentAnalyzer:
     def __init__(
         self,
         *,
-        tokenizer: PreTrainedTokenizerFast,
-        model: MegatronBertForSequenceClassification,
+        tokenizer: Optional[PreTrainedTokenizerFast] = None,
+        model: Optional[MegatronBertForSequenceClassification] = None,
         num_decimals: int = 3,
     ) -> None:
         """Create a SentimentAnalyzer using the given tokenizer and model.
@@ -40,12 +40,22 @@ class SentimentAnalyzer:
             model (MegatronBertForSequenceClassification): the model to use
             num_decimals (int): number of decimals to use (defaults to 3)
         """
-        logger.debug("type(tokenizer)=%s", type(tokenizer))
-        logger.debug("type(model)=%s", type(model))
-        self.tokenizer = tokenizer
-        self.model = model
+        self.tokenizer = self._default_tokenizer() if tokenizer is None else tokenizer
+        self.model = self._default_model() if model is None else model
         self.num_decimals = num_decimals
-        self.classifier = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+        self.classifier = pipeline(
+            "sentiment-analysis", model=self.model, tokenizer=self.tokenizer
+        )
+
+    @classmethod
+    def _default_tokenizer(cls) -> PreTrainedTokenizerFast:
+        return AutoTokenizer.from_pretrained(TOKENIZER_NAME, revision=TOKENIZER_REVISION)
+
+    @classmethod
+    def _default_model(cls) -> MegatronBertForSequenceClassification:
+        return AutoModelForSequenceClassification.from_pretrained(
+            MODEL_NAME, revision=MODEL_REVISION
+        )
 
     @classmethod
     def default(cls) -> "SentimentAnalyzer":
@@ -54,10 +64,8 @@ class SentimentAnalyzer:
         Returns:
             SentimentAnalyzer: the create SentimentAnalyzer
         """
-        tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_NAME, revision=TOKENIZER_REVISION)
-        model = AutoModelForSequenceClassification.from_pretrained(
-            MODEL_NAME, revision=MODEL_REVISION
-        )
+        tokenizer = cls._default_tokenizer()
+        model = cls._default_model()
         return cls(model=model, tokenizer=tokenizer)
 
     def analyze_sentence(self, text: List[str]) -> Optional[str]:
@@ -70,9 +78,7 @@ class SentimentAnalyzer:
             List[Optional[str]]: the sentence annotations.
         """
         sentence = TOK_SEP.join(text)
-
         classifications = self.classifier(sentence)
-        logger.debug("classifications=%s", classifications)
         collect_label_and_score = ((clss["label"], clss["score"]) for clss in classifications)
         score_format, score_pred = SCORE_FORMAT_AND_PREDICATE[self.num_decimals]
 
@@ -89,14 +95,14 @@ class SentimentAnalyzer:
 
 
 SCORE_FORMAT_AND_PREDICATE = {
-    1: ("{:.1f}", lambda s: s.endswith(".0")),
-    2: ("{:.2f}", lambda s: s.endswith(".00")),
-    3: ("{:.3f}", lambda s: s.endswith(".000")),
-    4: ("{:.4f}", lambda s: s.endswith(".0000")),
-    5: ("{:.5f}", lambda s: s.endswith(".00000")),
-    6: ("{:.6f}", lambda s: s.endswith(".000000")),
-    7: ("{:.7f}", lambda s: s.endswith(".0000000")),
-    8: ("{:.8f}", lambda s: s.endswith(".00000000")),
-    9: ("{:.9f}", lambda s: s.endswith(".000000000")),
-    10: ("{:.10f}", lambda s: s.endswith(".0000000000")),
+    1: ("{:.1f}", lambda s: s.startswith("0") and s.endswith(".0")),
+    2: ("{:.2f}", lambda s: s.startswith("0") and s.endswith(".00")),
+    3: ("{:.3f}", lambda s: s.startswith("0") and s.endswith(".000")),
+    4: ("{:.4f}", lambda s: s.startswith("0") and s.endswith(".0000")),
+    5: ("{:.5f}", lambda s: s.startswith("0") and s.endswith(".00000")),
+    6: ("{:.6f}", lambda s: s.startswith("0") and s.endswith(".000000")),
+    7: ("{:.7f}", lambda s: s.startswith("0") and s.endswith(".0000000")),
+    8: ("{:.8f}", lambda s: s.startswith("0") and s.endswith(".00000000")),
+    9: ("{:.9f}", lambda s: s.startswith("0") and s.endswith(".000000000")),
+    10: ("{:.10f}", lambda s: s.startswith("0") and s.endswith(".0000000000")),
 }
