@@ -13,7 +13,7 @@ Plugin for applying bert masking as a [Sparv](https://github.com/spraakbanken/sp
 
 ## Install
 
-First, install Sparv, as suggested:
+First, install Sparv as suggested:
 
 ```bash
 pipx install sparv-pipeline
