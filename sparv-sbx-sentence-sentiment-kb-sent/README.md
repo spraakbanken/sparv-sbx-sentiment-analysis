@@ -47,7 +47,7 @@ export:
 
 ### Configuration
 
-You can configure this plugin by the number of neighbours to generate.
+You can configure this plugin in the following way.
 
 #### Number of Decimals
 
