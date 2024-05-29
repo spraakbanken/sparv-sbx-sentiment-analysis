@@ -9,7 +9,7 @@
 
 [![CI(release)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/release-sentence-sentiment-kb-sent.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/release-sentence-sentiment-kb-sent.yml)
 
-Plugin for applying bert masking as a [Sparv](https://github.com/spraakbanken/sparv-pipeline) annotation.
+Plugin for computing sentence sentiment as a [Sparv](https://github.com/spraakbanken/sparv-pipeline) annotation.
 
 ## Install
 
@@ -33,7 +33,7 @@ annotation exclusively by adding it as the only annotation to export under `xml_
 ```yaml
 xml_export:
     annotations:
-        - <token>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-bert
+        - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
 ```
 
 To use it together with other annotations you might add it under `export`:
@@ -41,7 +41,7 @@ To use it together with other annotations you might add it under `export`:
 ```yaml
 export:
     annotations:
-        - <token>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-bert
+        - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
         ...
 ```
 
