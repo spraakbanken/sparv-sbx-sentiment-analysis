@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Fixed
+
+- Use correct module name
+
 ## [0.1.0] - 2024-05-28
 
 ### Added
