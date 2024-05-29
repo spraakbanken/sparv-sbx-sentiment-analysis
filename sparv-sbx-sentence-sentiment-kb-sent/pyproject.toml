@@ -1,7 +1,7 @@
 [project]
 name = "sparv-sbx-sentence-sentiment-kb-sent"
 version = "0.1.0"
-description = "A sparv plugin for computing word neighbours using a BERT model."
+description = "A sparv plugin for computing sentence sentiment."
 authors = [
     { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
     { name = "Kristoffer Andersson", email = "kristoffer.andersson@gu.se" },
@@ -55,7 +55,4 @@ allow-direct-references = true
 
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "pytest>=8.0.0",
-    "syrupy>=4.6.1",
-]
+dev = ["pytest>=8.0.0", "syrupy>=4.6.1"]

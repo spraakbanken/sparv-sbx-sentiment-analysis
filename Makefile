@@ -165,7 +165,7 @@ CHANGELOG.md:
 snapshot-update:
 	${INVENV} pytest --snapshot-update
 
-.PHONY: kb-bert-prepare-release
+.PHONY: sparv-sbx-sentence-sentiment-kb-sent-prepare-release
 sparv-sbx-sentence-sentiment-kb-sent-prepare-release: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
 
 .PHONY: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
