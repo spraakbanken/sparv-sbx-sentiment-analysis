@@ -3,5 +3,6 @@
   list([
     '|POSITIVE:0.9|',
     '|NEUTRAL:1.0|',
+    '|NEGATIVE:0.7|',
   ])
 # ---
