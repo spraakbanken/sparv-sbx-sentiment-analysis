@@ -36,5 +36,6 @@ def annotate_sentence_sentiment(
     for sent_i, sent in enumerate(sentences):
         sent_to_tag = [token_word[token_index] for token_index in sent]
         out_sentence_sentiment_annotation[sent_i] = analyzer.analyze_sentence(sent_to_tag)
+        logger.debug("annotation[%d]=%s", sent_i, out_sentence_sentiment_annotation[sent_i])
 
     out_sentence_sentiment.write(out_sentence_sentiment_annotation)

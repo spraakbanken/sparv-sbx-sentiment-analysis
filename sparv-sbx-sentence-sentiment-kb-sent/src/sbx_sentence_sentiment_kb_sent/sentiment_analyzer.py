@@ -1,6 +1,7 @@
 """Sentiment analyzer."""
 
-from typing import List, Optional
+from collections import defaultdict
+from typing import Dict, List, Optional, Union
 
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 from transformers import (  # type: ignore [import-untyped]
@@ -19,6 +20,7 @@ MODEL_NAME = "KBLab/robust-swedish-sentiment-multiclass"
 MODEL_REVISION = "b0ec32dca56aa6182a6955c8f12129bbcbc7fdbd"
 
 TOK_SEP = " "
+MAX_LENGTH: int = 700
 
 
 class SentimentAnalyzer:
@@ -77,8 +79,18 @@ class SentimentAnalyzer:
         Returns:
             List[Optional[str]]: the sentence annotations.
         """
-        sentence = TOK_SEP.join(text)
-        classifications = self.classifier(sentence)
+        total_length = sum(len(t) for t in text) + len(text) - 1
+        logger.debug("analyzed text length=%d", total_length)
+        if total_length > MAX_LENGTH:
+            logger.warning(
+                "Long sentence (%d chars), splitting and combining results", total_length
+            )
+            classifications = self._analyze_in_chunks(text)
+        else:
+            sentence = TOK_SEP.join(text)
+            logger.debug("analyzing '%s'", sentence)
+            classifications = self.classifier(sentence)
+        logger.debug("classifications = %s", classifications)
         collect_label_and_score = ((clss["label"], clss["score"]) for clss in classifications)
         score_format, score_pred = SCORE_FORMAT_AND_PREDICATE[self.num_decimals]
 
@@ -92,6 +104,27 @@ class SentimentAnalyzer:
             f"{label}:{score}" for label, score in filter_out_zero_scores
         )
         return f"|{classification_str}|" if classification_str else "|"
+
+    def _analyze_in_chunks(self, text: List[str]) -> List[Dict[str, Union[str, float]]]:
+        classifications_list = []
+        start_i = 0
+        curr_length = 0
+        for t_i, t in enumerate(text):
+            if len(t) + curr_length > MAX_LENGTH:
+                clss = self.classifier(" ".join(text[start_i:t_i]))
+                classifications_list.append(clss)
+                start_i = t_i
+            else:
+                curr_length += len(t) + 1
+        classifications_dict = defaultdict(list)
+        for clsss in classifications_list:
+            for clss in clsss:
+                classifications_dict[clss["label"]].append(clss["score"])
+
+        return [
+            {"label": label, "score": sum(scores) / len(scores)}
+            for label, scores in classifications_dict.items()
+        ]
 
 
 SCORE_FORMAT_AND_PREDICATE = {
