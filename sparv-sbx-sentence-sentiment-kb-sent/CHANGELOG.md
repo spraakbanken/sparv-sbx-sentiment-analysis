@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Fixed
+
+- Handle long texts (Issue #10)
+
+### Testing
+
+- Use sparv-pipeline-testing instead of local
+
 ## [0.1.1] - 2024-05-29
 
 ### Fixed
