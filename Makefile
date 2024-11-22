@@ -180,5 +180,8 @@ sparv-sbx-sentence-sentiment-kb-sent-bumpversion: force_lookup
 sparv-sbx-sentence-sentiment-kb-sent-bumpversion-show: force_lookup
 	cd sparv-sbx-sentence-sentiment-kb-sent; ${MAKE} bumpversion
 
+sparv-sbx-sentence-sentiment-kb-sent-build: force_lookup
+	cd sparv-sbx-sentence-sentiment-kb-sent; ${MAKE} build
+
 force_lookup:
 	@true

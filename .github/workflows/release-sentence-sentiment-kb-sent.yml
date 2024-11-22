@@ -1,11 +1,11 @@
-name: release
+name: release-sentence-sentiment-kb-sent
 
 on:
   push:
     branches:
       - main
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "sentence-sentiment-kb-sent-v[0-9]+.[0-9]+.[0-9]+"
   pull_request:
   merge_group:
 
@@ -56,7 +56,7 @@ jobs:
       #  -----  build distribution -----
       #----------------------------------------------
       - name: Build distribution
-        run: make build
+        run: make sparv-sbx-sentence-sentiment-kb-sent-build
 
       #----------------------------------------------
       #  -----  upload artifacts  -----
@@ -78,8 +78,6 @@ jobs:
       matrix:
         os:
           - ubuntu
-          - macos
-          - windows
 
     runs-on: ${{ matrix.os }}-latest
     steps:
@@ -98,11 +96,11 @@ jobs:
           name: pypi_files
           path: dist
 
-      - run: rm -r <INSERT PROJECT SRC>
+      - run: rm -r sparv-sbx-sentence-sentiment-kb-sent/src
       - run: pip install typing-extensions
-      - run: pip install -r tests/requirements-testing.lock
-      - run: pip install <INSERT PROJECT NAME> --no-index --no-deps --find-links dist --force-reinstall
-      - run: pytest
+      - run: pip install -r sparv-sbx-sentence-sentiment-kb-sent/tests/requirements-testing.lock
+      - run: pip install sparv-sbx-sentence-sentiment-kb-sent --no-index --no-deps --find-links dist --force-reinstall
+      - run: pytest sparv-sbx-sentence-sentiment-kb-sent/tests
 
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
   release-check:
@@ -124,7 +122,7 @@ jobs:
 
     needs:
       - test-build
-    if: success() && startsWith(github.ref, 'refs/tags/v')
+    if: success() && startsWith(github.ref, 'refs/tags/sentence-sentiment-kb-sent-v')
     runs-on: ubuntu-latest
     environment: release
     permissions:
