@@ -69,6 +69,15 @@ Type | HuggingFace Model | Revision
 Model | [`KBLab/robust-swedish-sentiment-multiclass`](https://huggingface.co/KBLab/robust-swedish-sentiment-multiclass) | b0ec32dca56aa6182a6955c8f12129bbcbc7fdbd
 Tokenizer | [`KBLab/megatron-bert-large-swedish-cased-165k`](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-165k)  | 90c57ab49e27b820bd85308a488409dfea25600d
 
+## Minimum Supported Python Version
+
+This library thrives to support each Python version to End-Of-Life.
+
+Versions of this library supportes the following Python version:
+
+- v0.3: Python 3.9
+- v0.2: Python 3.8
+
 ## Changelog
 
 This project keeps a [changelog](./CHANGELOG.md).

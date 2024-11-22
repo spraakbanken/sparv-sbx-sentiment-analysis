@@ -1,7 +1,7 @@
 """Sentiment analyzer."""
 
 from collections import defaultdict
-from typing import Dict, List, Optional, Union
+from typing import Optional, Union
 
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 from transformers import (  # type: ignore [import-untyped]
@@ -45,9 +45,7 @@ class SentimentAnalyzer:
         self.tokenizer = self._default_tokenizer() if tokenizer is None else tokenizer
         self.model = self._default_model() if model is None else model
         self.num_decimals = num_decimals
-        self.classifier = pipeline(
-            "sentiment-analysis", model=self.model, tokenizer=self.tokenizer
-        )
+        self.classifier = pipeline("sentiment-analysis", model=self.model, tokenizer=self.tokenizer)
 
     @classmethod
     def _default_tokenizer(cls) -> PreTrainedTokenizerFast:
@@ -55,9 +53,7 @@ class SentimentAnalyzer:
 
     @classmethod
     def _default_model(cls) -> MegatronBertForSequenceClassification:
-        return AutoModelForSequenceClassification.from_pretrained(
-            MODEL_NAME, revision=MODEL_REVISION
-        )
+        return AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, revision=MODEL_REVISION)
 
     @classmethod
     def default(cls) -> "SentimentAnalyzer":
@@ -70,21 +66,19 @@ class SentimentAnalyzer:
         model = cls._default_model()
         return cls(model=model, tokenizer=tokenizer)
 
-    def analyze_sentence(self, text: List[str]) -> Optional[str]:
+    def analyze_sentence(self, text: list[str]) -> Optional[str]:
         """Analyze a sentence.
 
         Args:
             text (Iterable[str]): the text to analyze
 
         Returns:
-            List[Optional[str]]: the sentence annotations.
+            list[Optional[str]]: the sentence annotations.
         """
         total_length = sum(len(t) for t in text) + len(text) - 1
         logger.debug("analyzed text length=%d", total_length)
         if total_length > MAX_LENGTH:
-            logger.warning(
-                "Long sentence (%d chars), splitting and combining results", total_length
-            )
+            logger.warning("Long sentence (%d chars), splitting and combining results", total_length)
             classifications = self._analyze_in_chunks(text)
         else:
             sentence = TOK_SEP.join(text)
@@ -94,18 +88,12 @@ class SentimentAnalyzer:
         collect_label_and_score = ((clss["label"], clss["score"]) for clss in classifications)
         score_format, score_pred = SCORE_FORMAT_AND_PREDICATE[self.num_decimals]
 
-        format_scores = (
-            (label, score_format.format(score)) for label, score in collect_label_and_score
-        )
-        filter_out_zero_scores = (
-            (label, score) for label, score in format_scores if not score_pred(score)
-        )
-        classification_str = "|".join(
-            f"{label}:{score}" for label, score in filter_out_zero_scores
-        )
+        format_scores = ((label, score_format.format(score)) for label, score in collect_label_and_score)
+        filter_out_zero_scores = ((label, score) for label, score in format_scores if not score_pred(score))
+        classification_str = "|".join(f"{label}:{score}" for label, score in filter_out_zero_scores)
         return f"|{classification_str}|" if classification_str else "|"
 
-    def _analyze_in_chunks(self, text: List[str]) -> List[Dict[str, Union[str, float]]]:
+    def _analyze_in_chunks(self, text: list[str]) -> list[dict[str, Union[str, float]]]:
         classifications_list = []
         start_i = 0
         curr_length = 0
@@ -121,10 +109,7 @@ class SentimentAnalyzer:
             for clss in clsss:
                 classifications_dict[clss["label"]].append(clss["score"])
 
-        return [
-            {"label": label, "score": sum(scores) / len(scores)}
-            for label, scores in classifications_dict.items()
-        ]
+        return [{"label": label, "score": sum(scores) / len(scores)} for label, scores in classifications_dict.items()]
 
 
 SCORE_FORMAT_AND_PREDICATE = {

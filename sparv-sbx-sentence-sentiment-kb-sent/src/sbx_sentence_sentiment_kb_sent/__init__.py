@@ -10,7 +10,7 @@ __all__ = ["annotate_sentence_sentiment"]
 __description__ = "Annotate sentence with sentiment analysis."
 __version__ = "0.2.0"
 
-__config__ = [
+__config__: list[sparv_api.Config] = [
     sparv_api.Config(
         f"{PROJECT_NAME}.num_decimals",
         description="The number of decimals to round the score to",

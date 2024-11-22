@@ -13,7 +13,7 @@ def annotate_sentence_sentiment(
     out_sentence_sentiment: sparv_api.Output = sparv_api.Output(
         f"<sentence>:{PROJECT_NAME}.sentence-sentiment--kb-sent",
         # cls="sbx_sentence_sentiment_kb_sent",
-        description="Sentiment analysis of sentence with KBLab/robust-swedish-sentiment-multiclass",  # noqa: E501
+        description="Sentiment analysis of sentence with KBLab/robust-swedish-sentiment-multiclass",
     ),
     word: sparv_api.Annotation = sparv_api.Annotation("<token:word>"),
     sentence: sparv_api.Annotation = sparv_api.Annotation("<sentence>"),

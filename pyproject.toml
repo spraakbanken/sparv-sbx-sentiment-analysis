@@ -7,3 +7,8 @@ dependencies = []
 
 [tool.uv.workspace]
 members = ["sparv-sbx-sentence-sentiment-kb-sent"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13.0",
+]
