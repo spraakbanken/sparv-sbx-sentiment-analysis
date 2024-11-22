@@ -72,8 +72,8 @@ default_cov := "--cov=${PROJECT_SRC}"
 cov_report := "term-missing"
 cov := ${default_cov}
 
-all_tests := sparv-sbx-sentence-sentiment-kb-sent/tests
-tests := sparv-sbx-sentence-sentiment-kb-sent/tests
+all_tests := tests
+tests := tests
 
 info:
 	@echo "Platform: ${PLATFORM}"
@@ -147,38 +147,8 @@ publish:
 
 
 .PHONY: prepare-release
-prepare-release: update-changelog tests/requirements-testing.lock
+prepare-release: tests/requirements-testing.lock
 
 # we use lock extension so that dependabot doesn't pick up changes in this file
 tests/requirements-testing.lock: pyproject.toml
 	uv export --dev --format requirements-txt --no-hashes --no-emit-project --output-file $@
-
-.PHONY: update-changelog
-update-changelog: CHANGELOG.md
-
-.PHONY: CHANGELOG.md
-CHANGELOG.md:
-	git cliff --unreleased --prepend $@
-
-# update snapshots for `syrupy`
-.PHONY: snapshot-update
-snapshot-update:
-	${INVENV} pytest --snapshot-update
-
-### === project targets below this line ===
-.PHONY: sparv-sbx-sentence-sentiment-kb-sent-prepare-release
-sparv-sbx-sentence-sentiment-kb-sent-prepare-release: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
-	cd sparv-sbx-sentence-sentiment-kb-sent; ${MAKE} prepare-release
-
-.PHONY: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
-sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md:
-	git cliff --unreleased --include-path "sparv-sbx-sentence-sentiment-kb-sent/**/*" --include-path "examples/sparv-sbx-sentence-sentiment-kb-sent/**/*" --prepend $@
-
-sparv-sbx-sentence-sentiment-kb-sent-bumpversion: force_lookup
-	@cd sparv-sbx-sentence-sentiment-kb-sent; ${MAKE} bumpversion ${MFLAGS}
-
-sparv-sbx-sentence-sentiment-kb-sent-bumpversion-show: force_lookup
-	cd sparv-sbx-sentence-sentiment-kb-sent; ${MAKE} bumpversion
-
-force_lookup:
-	@true
