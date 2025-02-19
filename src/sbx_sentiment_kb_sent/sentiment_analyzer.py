@@ -3,6 +3,7 @@
 from collections import defaultdict
 from typing import Optional, Union
 
+import torch
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 from transformers import (  # type: ignore [import-untyped]
     AutoModelForSequenceClassification,
@@ -21,6 +22,20 @@ MODEL_REVISION = "b0ec32dca56aa6182a6955c8f12129bbcbc7fdbd"
 
 TOK_SEP = " "
 MAX_LENGTH: int = 700
+
+
+def _get_dtype() -> torch.dtype:
+    if torch.cuda.is_available():
+        logger.info("Using GPU (cuda)")
+        dtype = torch.float16
+    else:
+        logger.warning("Using CPU, is cuda available?")
+        dtype = torch.float32
+    return dtype
+
+
+def _get_device_map() -> Optional[str]:
+    return "auto" if torch.cuda.is_available() and torch.cuda.device_count() > 1 else None
 
 
 class SentimentAnalyzer:
@@ -45,8 +60,18 @@ class SentimentAnalyzer:
         self.tokenizer = self._default_tokenizer() if tokenizer is None else tokenizer
         self.model = self._default_model() if model is None else model
         self.num_decimals = num_decimals
+
+        if torch.cuda.is_available() and torch.cuda.device_count() == 1:
+            logger.info("Using GPU (cuda)")
+            self.model = self.model.cuda()
+        else:
+            logger.warning("Using CPU, is cuda available?")
         self.classifier = pipeline(
-            "sentiment-analysis", model=self.model, tokenizer=self.tokenizer
+            "sentiment-analysis",
+            model=self.model,
+            tokenizer=self.tokenizer,
+            device_map=_get_device_map(),
+            torch_dtype=_get_dtype(),
         )
 
     @classmethod
@@ -56,7 +81,10 @@ class SentimentAnalyzer:
     @classmethod
     def _default_model(cls) -> MegatronBertForSequenceClassification:
         return AutoModelForSequenceClassification.from_pretrained(
-            MODEL_NAME, revision=MODEL_REVISION
+            MODEL_NAME,
+            revision=MODEL_REVISION,
+            torch_dtype=_get_dtype(),
+            device_map=_get_device_map(),
         )
 
     @classmethod
