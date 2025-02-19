@@ -6,7 +6,7 @@ requires-python = ">=3.9"
 dependencies = []
 
 [tool.uv.workspace]
-members = ["sparv-sbx-sentence-sentiment-kb-sent"]
+members = ["sparv-sbx-sentence-sentiment-kb-sent", "sparv-sbx-paragraph-sentiment-kb-sent"]
 
 [dependency-groups]
 dev = [

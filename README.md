@@ -10,3 +10,4 @@ Sparv Plugins to perform sentiment analysis as annotations
 This repo contains the following projects:
 
 - [sparv-sbx-sentence-sentiment-kb-sent](./sparv-sbx-sentence-sentiment-kb-sent/) [![PyPI version](https://badge.fury.io/py/sparv-sbx-sentence-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentence-sentiment-kb-sent)
+- [sparv-sbx-paragraph-sentiment-kb-sent](./sparv-sbx-paragraph-sentiment-kb-sent/) [![PyPI version](https://badge.fury.io/py/sparv-sbx-paragraph-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-paragraph-sentiment-kb-sent)
