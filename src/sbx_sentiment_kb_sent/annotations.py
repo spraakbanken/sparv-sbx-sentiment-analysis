@@ -2,8 +2,8 @@
 
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 
-from sbx_sentence_sentiment_kb_sent.constants import PROJECT_NAME
-from sbx_sentence_sentiment_kb_sent.sentiment_analyzer import SentimentAnalyzer
+from sbx_sentiment_kb_sent.constants import PROJECT_NAME
+from sbx_sentiment_kb_sent.sentiment_analyzer import SentimentAnalyzer
 
 logger = sparv_api.get_logger(__name__)
 

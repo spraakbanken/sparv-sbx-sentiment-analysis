@@ -1,0 +1,13 @@
+id: sbx-swe-sentiment_sentence-sparv-kb_sent
+name:
+    swe: Sentimentanalys med KBLab/
+    eng: Sentiment analysis with KBLab/
+short_description:
+    swe: Annotering av sentiment för varje mening i en text.
+    eng: Sentiment annotation for each sentence in a text.
+task: sentiment-analysis
+annotations:
+    -
+example_output: |-
+    ```xml
+    ```

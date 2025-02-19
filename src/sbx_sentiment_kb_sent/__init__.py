@@ -2,8 +2,8 @@
 
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 
-from sbx_sentence_sentiment_kb_sent.annotations import annotate_sentence_sentiment
-from sbx_sentence_sentiment_kb_sent.constants import PROJECT_NAME
+from sbx_sentiment_kb_sent.annotations import annotate_sentence_sentiment
+from sbx_sentiment_kb_sent.constants import PROJECT_NAME
 
 __all__ = ["annotate_sentence_sentiment"]
 

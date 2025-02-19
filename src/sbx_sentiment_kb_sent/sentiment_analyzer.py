@@ -1,7 +1,7 @@
 """Sentiment analyzer."""
 
 from collections import defaultdict
-from typing import Dict, List, Optional, Union
+from typing import Optional, Union
 
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 from transformers import (  # type: ignore [import-untyped]
@@ -70,7 +70,7 @@ class SentimentAnalyzer:
         model = cls._default_model()
         return cls(model=model, tokenizer=tokenizer)
 
-    def analyze_sentence(self, text: List[str]) -> Optional[str]:
+    def analyze_sentence(self, text: list[str]) -> Optional[str]:
         """Analyze a sentence.
 
         Args:
@@ -105,7 +105,7 @@ class SentimentAnalyzer:
         )
         return f"|{classification_str}|" if classification_str else "|"
 
-    def _analyze_in_chunks(self, text: List[str]) -> List[Dict[str, Union[str, float]]]:
+    def _analyze_in_chunks(self, text: list[str]) -> list[dict[str, Union[str, float]]]:
         classifications_list = []
         start_i = 0
         curr_length = 0

@@ -1,7 +1,8 @@
 import pytest
-from sbx_sentence_sentiment_kb_sent.annotations import annotate_sentence_sentiment
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 from sparv_pipeline_testing import MemoryOutput, MockAnnotation
+
+from sbx_sentiment_kb_sent.annotations import annotate_sentence_sentiment
 
 
 def test_annotate_sentence_sentiment(snapshot) -> None:  # noqa: ANN001
