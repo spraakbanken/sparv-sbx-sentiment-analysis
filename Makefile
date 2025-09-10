@@ -173,3 +173,6 @@ sparv-sbx-sentence-sentiment-kb-sent-prepare-release: sparv-sbx-sentence-sentime
 .PHONY: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
 sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md:
 	git cliff --unreleased --include-path "sparv-sbx-sentence-sentiment-kb-sent/**/*" --include-path "examples/sparv-sbx-sentence-sentiment-kb-sent/**/*" --prepend $@
+
+sparv-sbx-sentence-sentiment-kb-sent/tests/requirements-testing.lock: uv.lock sparv-sbx-sentence-sentiment-kb-sent/pyproject.toml
+	uv export --package sparv-sbx-sentence-sentiment-kb-sent --dev --format=requirements-txt --no-hashes --no-emit-project --output-file=$@

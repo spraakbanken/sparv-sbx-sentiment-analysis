@@ -1,17 +1,20 @@
 [project]
 name = "sparv-sbx-sentence-sentiment-workspace"
 dependencies = []
-requires-python = ">=3.8.1,<3.12"
+requires-python = ">=3.9,<3.12"
 version = "0.0.0"
 
-[tool.pdm.dev-dependencies]
+[tool.uv]
+
+[tool.uv.workspace]
+members = ["sparv-sbx-sentence-sentiment-kb-sent"]
+
+[dependency-groups]
 dev = [
-    "-e sparv-sbx-sentence-sentiment-kb-sent @ file:///${PROJECT_ROOT}/sparv-sbx-sentence-sentiment-kb-sent",
-    "pytest>=8.1.1",
-    "pytest-cov>=4.1.0",
-    "mypy>=1.9.0",
-    "ruff>=0.4.5",
-    "bump-my-version>=0.19.0",
-    "syrupy>=4.6.1",
+    "mypy>=1.17.1",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.12.12",
+    "syrupy>=4.9.1",
     "sparv-pipeline-testing @ git+https://github.com/spraakbanken/sparv-pipeline-testing.git@v0.1.5",
 ]
