@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 from sbx_sentence_sentiment_kb_sent.sentiment_analyzer import SentimentAnalyzer
 
@@ -38,7 +36,7 @@ def test_neutral_text(sentiment_analyzer: SentimentAnalyzer) -> None:
     assert actual == expected
 
 
-def remove_scores(actual: Optional[str]) -> Optional[str]:
+def remove_scores(actual: str | None) -> str | None:
     """Remove scores."""
     if not actual:
         return actual
