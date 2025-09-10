@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 env:
-  MINIMUM_PYTHON_VERSION: "3.9"
+  MINIMUM_PYTHON_VERSION: "3.11"
   UV_VERSION: "0.8.13"
 
 jobs:
@@ -32,9 +32,9 @@ jobs:
         os: [ubuntu]
         python-version:
           # remove the unused versions
-          - "3.9"
-          - "3.10"
           - "3.11"
+          - "3.12"
+          - "3.13"
           - "3.12"
           - "3.13"
 
@@ -96,7 +96,7 @@ jobs:
     #
 
     runs-on: ubuntu-latest
-    name: ubuntu / 3.9 / minimal-versions
+    name: ubuntu / 3.11 / minimal-versions
     steps:
       - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
         with:
@@ -122,7 +122,7 @@ jobs:
         run: make test
 
   test-example:
-    name: ubuntu / 3.9 / test-example / ${{ matrix.example-name }}
+    name: ubuntu / 3.11 / test-example / ${{ matrix.example-name }}
     strategy:
       max-parallel: 4
       fail-fast: false
