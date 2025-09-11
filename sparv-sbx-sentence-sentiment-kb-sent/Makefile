@@ -1,6 +1,6 @@
 
 # use this Makefile as base in your project by running
-# git remote add make https://github.com/spraakbanken/python-pdm-make-conf
+# git remote add make https://github.com/spraakbanken/python-uv-make-conf
 # git fetch make
 # git merge --allow-unrelated-histories make/main
 #
@@ -50,19 +50,19 @@ help:
 	@echo ""
 	@echo "publish [branch=]"
 	@echo "   pushes the given branch including tags to origin, for CI to publish based on tags. (Default: branch='main')"
-	@echo "   Typically used after `make bumpversion`"
+	@echo "   Typically used after 'make bumpversion'"
 	@echo ""
 	@echo "prepare-release"
 	@echo "   run tasks to prepare a release"
 	@echo ""
 
 PLATFORM := `uname -o`
-REPO := "sparv-sbx-sentiment-analysis"
-PROJECT_SRC := "src/sbx_sentence_sentiment_kb_sent"
+REPO := sparv-sbx-sentiment-analysis
+PROJECT_SRC := src/sbx_sentence_sentiment_kb_sent
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
-  INVENV = pdm run
+  INVENV = uv run
 else
   VENV_NAME = ${VIRTUAL_ENV}
   INVENV =
@@ -83,11 +83,16 @@ dev: install-dev
 
 # setup development environment
 install-dev:
-	pdm install --dev
+	uv sync --all-packages --dev
 
 # setup production environment
 install:
-	pdm sync --prod
+	uv sync --all-packages --no-dev
+
+lock: uv.lock
+
+uv.lock: pyproject.toml
+	uv lock
 
 .PHONY: test
 test:
@@ -96,11 +101,11 @@ test:
 .PHONY: test-w-coverage
 # run all tests with coverage collection
 test-w-coverage:
-	${INVENV} pytest -vv ${cov}  --cov-report=${cov_report} ${all_tests}
+	${INVENV} pytest -vv ${cov} --cov-report=term-missing --cov-report=xml:coverage.xml --cov-report=lcov:coverage.lcov ${all_tests}
 
 .PHONY: doc-tests
 doc-tests:
-	${INVENV} pytest ${cov} --cov-report=${cov_report} --doctest-modules ${PROJECT_SRC}
+	${INVENV} pytest ${cov} --cov-report=term-missing --cov-report=xml:coverage.xml --cov-report=lcov:coverage.lcov --doctest-modules ${PROJECT_SRC}
 
 .PHONY: type-check
 # check types
@@ -134,7 +139,7 @@ check-fmt:
 	${INVENV} ruff format --check ${PROJECT_SRC} ${tests}
 
 build:
-	pdm build
+	uvx --from build pyproject-build --installer uv
 
 branch := "main"
 publish:
@@ -145,6 +150,12 @@ publish:
 prepare-release: tests/requirements-testing.lock
 
 # we use lock extension so that dependabot doesn't pick up changes in this file
-tests/requirements-testing.lock: pyproject.toml pdm.lock
-	pdm export --dev --format requirements --no-hashes --output  $@
+tests/requirements-testing.lock: pyproject.toml uv.lock
+	uv export --dev --format requirements-txt --no-hashes --no-emit-project --output-file $@
 
+# update snapshots for `syrupy`
+.PHONY: snapshot-update
+snapshot-update:
+	${INVENV} pytest --snapshot-update
+
+### === project targets below this line ===

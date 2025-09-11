@@ -1,11 +1,11 @@
-name: release-sentence-sentiment-kb-sent
+name: release
 
 on:
   push:
     branches:
       - main
     tags:
-      - 'sentence-sentiment-kb-sent-v[0-9]+.[0-9]+.[0-9]+'
+      - "sentence-sentiment-kb-sent-v[0-9]+.[0-9]+.[0-9]+"
   pull_request:
   merge_group:
 
@@ -16,32 +16,42 @@ permissions:
   contents: read
 
 env:
-  MINIMUM_PYTHON_VERSION: "3.8"
+  MINIMUM_PYTHON_VERSION: "3.11"
+  UV_VERSION: "0.8.13"
 
 jobs:
   build:
     # This action builds distribution files for upload to PyPI
 
-    name: ubuntu / 3.8 / build
+    name: ubuntu / 3.11 / build
     runs-on: ubuntu-latest
     steps:
       #----------------------------------------------
       #       check-out repo and set-up python
       #----------------------------------------------
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
         with:
+          persist-credentials: false
           submodules: true
-      
+
       #----------------------------------------------
       #  -----  setup python   -----
       #----------------------------------------------
       - name: Set up the environment
-        uses: pdm-project/setup-pdm@v4
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
         id: setup-python
         with:
           python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
-      
+
+      #----------------------------------------------
+      #  -----  setup uv and load cache   -----
+      #----------------------------------------------
+      - name: Set up uv
+        uses: astral-sh/setup-uv@e1e6fe791067dce0dec13d733c5477f0f0cf6a5d
+        with:
+          version: ${{ env.UV_VERSION }}
+          enable-cache: true
+
       #----------------------------------------------
       #  -----  build distribution -----
       #----------------------------------------------
@@ -51,7 +61,7 @@ jobs:
       #----------------------------------------------
       #  -----  upload artifacts  -----
       #----------------------------------------------
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: pypi_files
           path: sparv-sbx-sentence-sentiment-kb-sent/dist
@@ -60,28 +70,31 @@ jobs:
     # This action runs the test suite on the built artifact in the `build` action.
     # The default is to run this in ubuntu, macos and windows
 
-    name: ${{ matrix.os }} / 3.8 / test built artifact
+    name: ${{ matrix.os }} / 3.11 / test built artifact
     needs: [build]
 
     strategy:
       fail-fast: false
       matrix:
-        os: 
+        os:
           - ubuntu
+          - macos
+          - windows
 
     runs-on: ${{ matrix.os }}-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
         with:
+          persist-credentials: false
           submodules: true
 
       - name: set up python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
         with:
           python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
 
       - name: get dist artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@abefc31eafcfbdf6c5336127c1346fdae79ff41c
         with:
           name: pypi_files
           path: dist
@@ -91,26 +104,26 @@ jobs:
       - run: pip install -r sparv-sbx-sentence-sentiment-kb-sent/tests/requirements-testing.lock
       - run: pip install sparv-sbx-sentence-sentiment-kb-sent --no-index --no-deps --find-links dist --force-reinstall
       - run: pytest
-  
+
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
   release-check:
     if: always()
-    needs: 
+    needs:
       - build
       - test-build
     runs-on: ubuntu-latest
     permissions: {}
     steps:
       - name: Decide whether the needed jobs succeeded or failed
-        uses: re-actors/alls-green@release/v1
+        uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe # v1.2.2
         with:
           jobs: ${{ toJSON(needs) }}
           # allowed-failures: coverage
 
   publish:
-    # This action publishes the built and tested artifact to PyPI, but only on a tag 
+    # This action publishes the built and tested artifact to PyPI, but only on a tag
 
-    needs: 
+    needs:
       - test-build
     if: success() && startsWith(github.ref, 'refs/tags/sentence-sentiment-kb-sent-v')
     runs-on: ubuntu-latest
@@ -119,18 +132,19 @@ jobs:
       # IMPORTANT: this permission is mandatory for trusted publishing
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
         with:
+          persist-credentials: false
           fetch-depth: 0
       - name: Set up Python ${{ env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
         with:
           python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
       - name: get dist artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@abefc31eafcfbdf6c5336127c1346fdae79ff41c
         with:
           name: pypi_files
           path: dist
 
       - name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0

@@ -32,8 +32,8 @@ annotation exclusively by adding it as the only annotation to export under `xml_
 
 ```yaml
 xml_export:
-    annotations:
-        - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
+  annotations:
+    - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
 ```
 
 To use it together with other annotations you might add it under `export`:
@@ -55,7 +55,7 @@ The number of decimals defaults to `3` but can be configured in `config.yaml`:
 
 ```yaml
 sbx_sentence_sentiment_kb_sent:
-    num_decimals: 3
+  num_decimals: 3
 ```
 
 > [!NOTE] This also controls the cut-off, so all values where the score round to 0.000 (or the number of decimals) is discarded.
@@ -64,10 +64,20 @@ sbx_sentence_sentiment_kb_sent:
 
 #### Model
 
-Type | HuggingFace Model | Revision
---- | --- | ---
-Model | [`KBLab/robust-swedish-sentiment-multiclass`](https://huggingface.co/KBLab/robust-swedish-sentiment-multiclass) | b0ec32dca56aa6182a6955c8f12129bbcbc7fdbd
-Tokenizer | [`KBLab/megatron-bert-large-swedish-cased-165k`](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-165k)  | 90c57ab49e27b820bd85308a488409dfea25600d
+| Type      | HuggingFace Model                                                                                                     | Revision                                 |
+| --------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| Model     | [`KBLab/robust-swedish-sentiment-multiclass`](https://huggingface.co/KBLab/robust-swedish-sentiment-multiclass)       | b0ec32dca56aa6182a6955c8f12129bbcbc7fdbd |
+| Tokenizer | [`KBLab/megatron-bert-large-swedish-cased-165k`](https://huggingface.co/KBLab/megatron-bert-large-swedish-cased-165k) | 90c57ab49e27b820bd85308a488409dfea25600d |
+
+## Supported Python versions
+
+This library thrives to support a Python version to End-Of-Life, and will at
+least bump the minor version when support for a Python version is dropped.
+
+The following versions of this library supports these Python versions:
+
+- v0.3: Python 3.11
+- v0.2: Python 3.8
 
 ## Changelog
 
