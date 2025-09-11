@@ -33,7 +33,7 @@ def _get_dtype() -> torch.dtype:
     return dtype
 
 
-def _get_device_map() -> Optional[str]:
+def _get_device_map() -> str | None:
     return "auto" if torch.cuda.is_available() and torch.cuda.device_count() > 1 else None
 
 
