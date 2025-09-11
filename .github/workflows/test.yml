@@ -155,10 +155,8 @@ jobs:
       - name: Run example
         run: |
           source .venv/bin/activate
-          cd examples/${{ matrix.example-name }}
           echo "" | sparv setup
-          sparv run
-          ls -R
+          make test-example-${{ matrix.example-name }}
 
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
   test-check:
