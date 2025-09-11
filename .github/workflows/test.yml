@@ -128,7 +128,8 @@ jobs:
       fail-fast: false
       matrix:
         example-name:
-          - sparv-sbx-sentence-sentiment-kb-sent
+          - small-txt
+          - issue-10
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
