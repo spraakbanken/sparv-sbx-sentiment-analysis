@@ -72,7 +72,7 @@ class SentimentAnalyzer:
             tokenizer=self.tokenizer,
             torch_dtype=_get_dtype(),
             device_map=_get_device_map(),
-        )
+        )  # type: ignore [call-overload]
 
     @classmethod
     def _default_tokenizer(cls) -> PreTrainedTokenizerFast:
