@@ -23,14 +23,14 @@ TOK_SEP = " "
 MAX_LENGTH: int = 700
 
 
-def _get_dtype() -> torch.dtype:
+def _get_dtype() -> tuple[torch.dtype, str]:
     if torch.cuda.is_available():
-        logger.info("Using GPU (cuda)")
         dtype = torch.float16
+        device = "cuda:0"
     else:
-        logger.warning("Using CPU, is cuda available?")
         dtype = torch.float32
-    return dtype
+        device = "cpu"
+    return dtype, device
 
 
 def _get_device_map() -> str | None:
@@ -56,22 +56,26 @@ class SentimentAnalyzer:
             model (MegatronBertForSequenceClassification): the model to use
             num_decimals (int): number of decimals to use (defaults to 3)
         """
+        dtype, device = _get_dtype()
+        device_map = _get_device_map()
         self.tokenizer = self._default_tokenizer() if tokenizer is None else tokenizer
-        self.model = self._default_model() if model is None else model
+        self.model = (
+            self._default_model(dtype=dtype, device_map=device_map) if model is None else model
+        )
         self.num_decimals = num_decimals
 
-        if torch.cuda.is_available() and torch.cuda.device_count() == 1:
+        if device == "cpu":
+            logger.warning("Using CPU, is cuda available?")
+        else:
             logger.info("Using GPU (cuda)")
             self.model = self.model.cuda()  # type: ignore
-        else:
-            logger.warning("Using CPU, is cuda available?")
 
         self.classifier = pipeline(
             "sentiment-analysis",
             model=self.model,
             tokenizer=self.tokenizer,
-            torch_dtype=_get_dtype(),
-            device_map=_get_device_map(),
+            dtype=dtype,
+            device_map=device_map,
         )  # type: ignore [call-overload]
 
     @classmethod
@@ -79,12 +83,14 @@ class SentimentAnalyzer:
         return AutoTokenizer.from_pretrained(TOKENIZER_NAME, revision=TOKENIZER_REVISION)
 
     @classmethod
-    def _default_model(cls) -> MegatronBertForSequenceClassification:
+    def _default_model(
+        cls, *, dtype: torch.dtype, device_map: str | None
+    ) -> MegatronBertForSequenceClassification:
         return AutoModelForSequenceClassification.from_pretrained(
             MODEL_NAME,
             revision=MODEL_REVISION,
-            torch_dtype=_get_dtype(),
-            device_map=_get_device_map(),
+            dtype=dtype,
+            device_map=device_map,
         )
 
     @classmethod
@@ -95,7 +101,8 @@ class SentimentAnalyzer:
             SentimentAnalyzer: the create SentimentAnalyzer
         """
         tokenizer = cls._default_tokenizer()
-        model = cls._default_model()
+        dtype, _device = _get_dtype()
+        model = cls._default_model(dtype=dtype, device_map=_get_device_map())
         return cls(model=model, tokenizer=tokenizer)
 
     def analyze_sentence(self, text: list[str]) -> str | None:
