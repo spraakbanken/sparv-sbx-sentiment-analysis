@@ -23,16 +23,6 @@ TOK_SEP = " "
 MAX_LENGTH: int = 700
 
 
-def _get_dtype() -> tuple[torch.dtype, str]:
-    if torch.cuda.is_available():
-        dtype = torch.float16
-        device = "cuda:0"
-    else:
-        dtype = torch.float32
-        device = "cpu"
-    return dtype, device
-
-
 def _get_device_map() -> str | None:
     return "auto" if torch.cuda.is_available() and torch.cuda.device_count() > 1 else None
 
@@ -56,7 +46,8 @@ class SentimentAnalyzer:
             model (MegatronBertForSequenceClassification): the model to use
             num_decimals (int): number of decimals to use (defaults to 3)
         """
-        dtype, device = _get_dtype()
+        dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+        device = "cuda:0" if torch.cuda.is_available() else "cpu"
         device_map = _get_device_map()
         self.tokenizer = self._default_tokenizer() if tokenizer is None else tokenizer
         self.model = (
@@ -101,7 +92,7 @@ class SentimentAnalyzer:
             SentimentAnalyzer: the create SentimentAnalyzer
         """
         tokenizer = cls._default_tokenizer()
-        dtype, _device = _get_dtype()
+        dtype = torch.float16 if torch.cuda.is_available() else torch.float32
         model = cls._default_model(dtype=dtype, device_map=_get_device_map())
         return cls(model=model, tokenizer=tokenizer)
 
