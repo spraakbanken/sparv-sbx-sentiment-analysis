@@ -8,7 +8,7 @@ authors = [
 ]
 dependencies = [
  "sparv>=5.3.1",
- "transformers>=4.34.1",
+ "transformers>=4.56.1",
 ]
 license = "MIT"
 readme = "README.md"

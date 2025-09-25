@@ -128,7 +128,8 @@ jobs:
       fail-fast: false
       matrix:
         example-name:
-          - sparv-sbx-sentence-sentiment-kb-sent
+          - small-txt
+          - issue-10
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
@@ -154,10 +155,8 @@ jobs:
       - name: Run example
         run: |
           source .venv/bin/activate
-          cd examples/${{ matrix.example-name }}
           echo "" | sparv setup
-          sparv run
-          ls -R
+          make test-example-${{ matrix.example-name }}
 
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
   test-check:

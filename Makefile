@@ -176,3 +176,27 @@ sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md:
 
 sparv-sbx-sentence-sentiment-kb-sent/tests/requirements-testing.lock: uv.lock sparv-sbx-sentence-sentiment-kb-sent/pyproject.toml
 	uv export --package sparv-sbx-sentence-sentiment-kb-sent --dev --format=requirements-txt --no-hashes --no-emit-project --output-file=$@
+
+test-example-small-txt:
+	rm -rf examples/small-txt/.snakemake examples/small-txt/export examples/small-txt/sparv-workdir
+	cd examples/small-txt; ${INVENV} sparv run --stats
+	diff examples/small-txt/expected_export/xml_export.pretty/small_export.gold.xml\
+		examples/small-txt/export/xml_export.pretty/small_export.xml
+
+update-example-small-txt-snapshot: examples/small-txt/expected_export/xml_export.pretty/small_export.gold.xml
+
+examples/small-txt/expected_export/xml_export.pretty/small_export.gold.xml: examples/small-txt/export/xml_export.pretty/small_export.xml
+	mkdir -pv $(shell dirname "$@")
+	@cp $< $@
+
+test-example-issue-10:
+	rm -rf examples/issue-10/.snakemake examples/issue-10/export examples/issue-10/sparv-workdir
+	cd examples/issue-10; ${INVENV} sparv run --stats
+	diff examples/issue-10/expected_export/xml_export.pretty/fp-1905-v_export.gold.xml\
+	    examples/issue-10/export/xml_export.pretty/fp-1905-v_export.xml
+
+update-example-issue-10-snapshot: examples/issue-10/expected_export/xml_export.pretty/fp-1905-v_export.gold.xml
+
+examples/issue-10/expected_export/xml_export.pretty/fp-1905-v_export.gold.xml: examples/issue-10/export/xml_export.pretty/fp-1905-v_export.xml
+	@mkdir --parent $(shell dirname "$@")
+	@cp $< $@

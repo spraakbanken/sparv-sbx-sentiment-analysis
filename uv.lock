@@ -1464,7 +1464,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "sparv", specifier = ">=5.3.1" },
-    { name = "transformers", specifier = ">=4.34.1" },
+    { name = "transformers", specifier = ">=4.56.1" },
 ]
 
 [package.metadata.requires-dev]
