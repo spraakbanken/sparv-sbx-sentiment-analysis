@@ -3,7 +3,6 @@
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 
 from sbx_sentence_sentiment_kb_sent.constants import PROJECT_NAME
-from sbx_sentence_sentiment_kb_sent.sentiment_analyzer import SentimentAnalyzer
 
 logger = sparv_api.get_logger(__name__)
 
@@ -20,6 +19,10 @@ def annotate_sentence_sentiment(
     num_decimals_str: str = sparv_api.Config(f"{PROJECT_NAME}.num_decimals"),
 ) -> None:
     """Sentiment analysis of sentence with KBLab/robust-swedish-sentiment-multiclass."""
+    from sbx_sentence_sentiment_kb_sent.sentiment_analyzer import (  # noqa: PLC0415
+        SentimentAnalyzer,
+    )
+
     try:
         num_decimals = int(num_decimals_str)
     except ValueError as exc:
