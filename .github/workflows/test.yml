@@ -48,7 +48,7 @@ jobs:
           submodules: true
 
       - name: Set up uv
-        uses: astral-sh/setup-uv@2841f9f5c1f3a4d2fe660cb20a8910794bac0423
+        uses: astral-sh/setup-uv@59a0868feaba544d51cc3fd89ba7c8a8bc9c6d05
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: true
@@ -102,7 +102,7 @@ jobs:
           submodules: true
 
       - name: Set up uv
-        uses: astral-sh/setup-uv@2841f9f5c1f3a4d2fe660cb20a8910794bac0423
+        uses: astral-sh/setup-uv@59a0868feaba544d51cc3fd89ba7c8a8bc9c6d05
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: true
@@ -136,7 +136,7 @@ jobs:
           submodules: true
 
       - name: Set up uv
-        uses: astral-sh/setup-uv@e1e6fe791067dce0dec13d733c5477f0f0cf6a5d
+        uses: astral-sh/setup-uv@59a0868feaba544d51cc3fd89ba7c8a8bc9c6d05
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: true
