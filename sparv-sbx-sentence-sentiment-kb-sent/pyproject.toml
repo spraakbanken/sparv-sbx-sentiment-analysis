@@ -58,6 +58,6 @@ allow-direct-references = true
 [dependency-groups]
 dev = [
     "pytest>=8.4.2",
-    "syrupy>=4.9.1",
+    "syrupy>=5.0.0",
     "sparv-testing @ git+https://github.com/spraakbanken/sparv-testing.git@v0.2.0",
 ]
