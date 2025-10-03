@@ -6,6 +6,9 @@ version = "0.0.0"
 
 [tool.uv]
 
+[tool.uv.sources]
+sparv-sbx-metadata = { git = "https://github.com/spraakbanken/sparv-sbx-metadata", tag = "v2.3.1" }
+
 [tool.uv.workspace]
 members = ["sparv-sbx-sentence-sentiment-kb-sent"]
 
@@ -17,4 +20,7 @@ dev = [
     "ruff>=0.12.12",
     "syrupy>=5.0.0",
     "sparv-testing @ git+https://github.com/spraakbanken/sparv-testing.git@v0.2.0",
+]
+metadata = [
+    "sparv-sbx-metadata",
 ]

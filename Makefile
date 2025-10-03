@@ -166,6 +166,14 @@ snapshot-update:
 	${INVENV} pytest --snapshot-update
 
 ### === project targets below this line ===
+install-dev-metadata:
+	uv sync --all-packages --group metadata --dev
+
+.PHONY: generate-metadata
+generate-metadata: install-dev-metadata \
+	sparv-sbx-sentence-sentiment-kb-sent/src/sbx_sentence_sentiment_kb_sent/metadata.yaml
+	rm -rf assets/metadata/export/sbx_metadata
+	cd assets/metadata; ${INVENV} sparv run sbx_metadata:plugin_analysis_metadata_export
 
 .PHONY: sparv-sbx-sentence-sentiment-kb-sent-prepare-release
 sparv-sbx-sentence-sentiment-kb-sent-prepare-release: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
