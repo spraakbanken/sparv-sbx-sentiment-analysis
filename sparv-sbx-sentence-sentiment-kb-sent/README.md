@@ -13,16 +13,32 @@ Plugin for computing sentence sentiment as a [Sparv](https://github.com/spraakba
 
 ## Install
 
+### With [pipx](https://pipx.pypa.io/latest/)
+
 First, install Sparv as suggested:
 
 ```bash
-pipx install sparv-pipeline
+pipx install sparv
 ```
 
 Then install install `sparv-sbx-sentence-sentiment-kb-sent` with
 
 ```bash
-pipx inject sparv-pipeline sparv-sbx-sentence-sentiment-kb-sent
+pipx inject sparv sparv-sbx-sentence-sentiment-kb-sent
+```
+
+### With [uv-pipx](https://github.com/pytgaen/uv-pipx)
+
+First, install Sparv as recommended:
+
+```shell
+uvpipx install sparv
+```
+
+Then install `sparv-sbx-sentence-sentiment-kb-sent` with
+
+```shell
+uvpipx install sparv-sbx-sentence-sentiment-kb-sent --inject sparv
 ```
 
 ## Usage
@@ -82,3 +98,7 @@ The following versions of this library supports these Python versions:
 ## Changelog
 
 This project keeps a [changelog](./CHANGELOG.md).
+
+## License
+
+This repository is licensed under the [MIT](./LICENSE) license.
