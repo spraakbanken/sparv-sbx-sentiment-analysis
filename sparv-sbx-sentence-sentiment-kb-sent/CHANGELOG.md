@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.1] - 2025-10-03
+## [unreleased]
 
 ### Added
 
@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Documentation
 
 - Add metadata.yaml for spraakbanken.gu.se/resurser by [@kod-kristoff](https://github.com/kod-kristoff)
+- Fix usage and development parts by [@kod-kristoff](https://github.com/kod-kristoff)
 
 ### Fixed
 
@@ -23,15 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Use uv instead of pdm by [@kod-kristoff](https://github.com/kod-kristoff)
 - Update minimum supported Python version to 3.11 by [@kod-kristoff](https://github.com/kod-kristoff)
-
-### Testing
-
-- Refactor tests by [@kod-kristoff](https://github.com/kod-kristoff)
-- Rename example by [@kod-kristoff](https://github.com/kod-kristoff)
-
-# Changelog
-
-All notable changes to this project will be documented in this file.
 
 ## [0.2.0] - 2024-06-05
 
