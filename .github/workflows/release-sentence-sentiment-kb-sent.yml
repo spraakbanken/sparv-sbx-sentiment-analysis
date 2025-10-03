@@ -47,7 +47,7 @@ jobs:
       #  -----  setup uv and load cache   -----
       #----------------------------------------------
       - name: Set up uv
-        uses: astral-sh/setup-uv@e1e6fe791067dce0dec13d733c5477f0f0cf6a5d
+        uses: astral-sh/setup-uv@2841f9f5c1f3a4d2fe660cb20a8910794bac0423
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: true
@@ -94,7 +94,7 @@ jobs:
           python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
 
       - name: get dist artifacts
-        uses: actions/download-artifact@abefc31eafcfbdf6c5336127c1346fdae79ff41c
+        uses: actions/download-artifact@4a24838f3d5601fd639834081e118c2995d51e1c
         with:
           name: pypi_files
           path: dist
@@ -141,7 +141,7 @@ jobs:
         with:
           python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
       - name: get dist artifacts
-        uses: actions/download-artifact@abefc31eafcfbdf6c5336127c1346fdae79ff41c
+        uses: actions/download-artifact@4a24838f3d5601fd639834081e118c2995d51e1c
         with:
           name: pypi_files
           path: dist
