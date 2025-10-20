@@ -58,7 +58,7 @@ help:
 
 PLATFORM := `uname -o`
 REPO := sparv-sbx-sentiment-analysis
-PROJECT_SRC := "sparv-sbx-sentence-sentiment-kb-sent/src"
+PROJECT_SRC := src/sbx_sentiment_kb_sent
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
@@ -72,8 +72,8 @@ default_cov := "--cov=${PROJECT_SRC}"
 cov_report := "term-missing"
 cov := ${default_cov}
 
-all_tests := sparv-sbx-sentence-sentiment-kb-sent/tests
-tests := sparv-sbx-sentence-sentiment-kb-sent/tests
+all_tests := tests
+tests := tests
 
 info:
 	@echo "Platform: ${PLATFORM}"
@@ -171,19 +171,9 @@ install-dev-metadata:
 
 .PHONY: generate-metadata
 generate-metadata: install-dev-metadata \
-	sparv-sbx-sentence-sentiment-kb-sent/src/sbx_sentence_sentiment_kb_sent/metadata.yaml
+	src/sbx_sentiment_kb_sent/metadata.yaml
 	rm -rf assets/metadata/export/sbx_metadata
 	cd assets/metadata; ${INVENV} sparv run sbx_metadata:plugin_analysis_metadata_export
-
-.PHONY: sparv-sbx-sentence-sentiment-kb-sent-prepare-release
-sparv-sbx-sentence-sentiment-kb-sent-prepare-release: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
-
-.PHONY: sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md
-sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md:
-	git cliff --unreleased --include-path "sparv-sbx-sentence-sentiment-kb-sent/**/*" --include-path "examples/sparv-sbx-sentence-sentiment-kb-sent/**/*" --prepend $@
-
-sparv-sbx-sentence-sentiment-kb-sent/tests/requirements-testing.lock: uv.lock sparv-sbx-sentence-sentiment-kb-sent/pyproject.toml
-	uv export --package sparv-sbx-sentence-sentiment-kb-sent --dev --format=requirements-txt --no-hashes --no-emit-project --output-file=$@
 
 test-example-small-txt:
 	rm -rf examples/small-txt/.snakemake examples/small-txt/export examples/small-txt/sparv-workdir
