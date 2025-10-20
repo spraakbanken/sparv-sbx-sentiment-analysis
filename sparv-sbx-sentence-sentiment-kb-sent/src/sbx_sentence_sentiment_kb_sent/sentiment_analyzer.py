@@ -59,7 +59,7 @@ class SentimentAnalyzer:
             logger.warning("Using CPU, is cuda available?")
         else:
             logger.info("Using GPU (cuda)")
-            self.model = self.model.cuda()  # type: ignore
+            # self.model = self.model.cuda()  # type: ignore
 
         self.classifier = pipeline(
             "sentiment-analysis",
