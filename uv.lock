@@ -6,12 +6,6 @@ resolution-markers = [
     "python_full_version < '3.12'",
 ]
 
-[manifest]
-members = [
-    "sparv-sbx-sentiment-kb-sent",
-    "sparv-sbx-sentence-sentiment-workspace",
-]
-
 [[package]]
 name = "appdirs"
 version = "1.4.4"
@@ -1538,36 +1532,11 @@ dependencies = [
 [[package]]
 name = "sparv-sbx-sentiment-kb-sent"
 version = "0.3.0"
-source = { editable = "sparv-sbx-sentiment-kb-sent" }
+source = { editable = "." }
 dependencies = [
     { name = "sparv" },
     { name = "transformers" },
 ]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "sparv-testing" },
-    { name = "syrupy" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "sparv", specifier = ">=5.3.1" },
-    { name = "transformers", specifier = ">=4.56.1" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pytest", specifier = ">=8.4.2" },
-    { name = "sparv-testing", git = "https://github.com/spraakbanken/sparv-testing.git?rev=v0.2.0" },
-    { name = "syrupy", specifier = ">=5.0.0" },
-]
-
-[[package]]
-name = "sparv-sbx-sentence-sentiment-workspace"
-version = "0.0.0"
-source = { virtual = "." }
 
 [package.dev-dependencies]
 dev = [
@@ -1583,6 +1552,10 @@ metadata = [
 ]
 
 [package.metadata]
+requires-dist = [
+    { name = "sparv", specifier = ">=5.3.1" },
+    { name = "transformers", specifier = ">=4.56.1" },
+]
 
 [package.metadata.requires-dev]
 dev = [
@@ -1590,7 +1563,7 @@ dev = [
     { name = "pytest", specifier = ">=8.4.2" },
     { name = "pytest-cov", specifier = ">=7.0.0" },
     { name = "ruff", specifier = ">=0.12.12" },
-    { name = "sparv-testing", git = "https://github.com/spraakbanken/sparv-testing.git?rev=v0.2.0" },
+    { name = "sparv-testing", git = "https://github.com/spraakbanken/sparv-testing?tag=v0.2.0" },
     { name = "syrupy", specifier = ">=5.0.0" },
 ]
 metadata = [{ name = "sparv-sbx-metadata", git = "https://github.com/spraakbanken/sparv-sbx-metadata?tag=v2.3.1" }]
@@ -1598,7 +1571,7 @@ metadata = [{ name = "sparv-sbx-metadata", git = "https://github.com/spraakbanke
 [[package]]
 name = "sparv-testing"
 version = "0.2.0"
-source = { git = "https://github.com/spraakbanken/sparv-testing.git?rev=v0.2.0#7cfa166e4699d3f2888f602ab7b4a8927891d5d8" }
+source = { git = "https://github.com/spraakbanken/sparv-testing?tag=v0.2.0#7cfa166e4699d3f2888f602ab7b4a8927891d5d8" }
 dependencies = [
     { name = "sparv" },
 ]

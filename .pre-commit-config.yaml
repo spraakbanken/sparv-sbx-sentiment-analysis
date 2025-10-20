@@ -37,7 +37,6 @@ repos:
     rev: v1.6.0
     hooks:
       - id: zizmor
-sparv-sbx-sentiment-kb-sentsparv-sbx-sentiment-kb-sent
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.33.0
     hooks:
