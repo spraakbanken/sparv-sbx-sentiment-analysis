@@ -56,7 +56,7 @@ This repo uses [conventional commits](https://www.conventionalcommits.org/en/v1.
   - Patch: `make bumpversion part=patch` or `make bumpversion`
   - Go back to repo root `cd -`
 - Push `main` and tags to GitHub: `git push main --tags` or `make publish`
-  - GitHub Actions will build, test and publish the package to [PyPi](https://pypi.prg).
+  - [GitHub Actions workflow](./.github/workflows/release-sentence-sentiment-kb-sent.yaml) will build, test and publish the package to [PyPi](https://pypi.prg).
 - Add metadata for [Språkbanken's resource](https://spraakbanken.gu.se/resurser)
   - Generate metadata: `make generate-metadata`
   - Upload the files from `assets/metadata/export/sbx_metadata/utility` to <https://github.com/spraakbanken/metadata/tree/main/yaml/utility>.
