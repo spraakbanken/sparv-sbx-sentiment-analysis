@@ -56,7 +56,7 @@ jobs:
       #  -----  build distribution -----
       #----------------------------------------------
       - name: Build distribution
-        run: cd sparv-sbx-sentence-sentiment-kb-sent && make build
+        run: make build
 
       #----------------------------------------------
       #  -----  upload artifacts  -----
@@ -64,7 +64,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: pypi_files
-          path: sparv-sbx-sentence-sentiment-kb-sent/dist
+          path: dist
 
   test-build:
     # This action runs the test suite on the built artifact in the `build` action.
@@ -99,10 +99,10 @@ jobs:
           name: pypi_files
           path: dist
 
-      - run: rm -r sparv-sbx-sentence-sentiment-kb-sent/src
+      - run: rm -r src
       - run: pip install typing-extensions
-      - run: pip install -r sparv-sbx-sentence-sentiment-kb-sent/tests/requirements-testing.lock
-      - run: pip install sparv-sbx-sentence-sentiment-kb-sent --no-index --no-deps --find-links dist --force-reinstall
+      - run: pip install -r tests/requirements-testing.lock
+      - run: pip install sparv-sbx-sentiment-kb-sent --no-index --no-deps --find-links dist --force-reinstall
       - run: pytest
 
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks

@@ -57,7 +57,7 @@ help:
 	@echo ""
 
 PLATFORM := `uname -o`
-REPO := sparv-sbx-sentiment-analysis
+REPO := sparv-sbx-sentiment-kb-sent
 PROJECT_SRC := src/sbx_sentiment_kb_sent
 
 ifeq (${VIRTUAL_ENV},)

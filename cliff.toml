@@ -6,7 +6,7 @@
 # See documentation for more information on available options.
 [remote.github]
 owner = "spraakbanken"
-repo = "sparv-sbx-sentiment-analysis"
+repo = "sparv-sbx-sentiment-kb-sent"
 
 [changelog]
 # changelog header

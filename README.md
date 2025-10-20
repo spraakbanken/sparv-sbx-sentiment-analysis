@@ -1,17 +1,17 @@
 # sparv-sbx-sentiment-kb-sent
 
-[![PyPI version](https://badge.fury.io/py/sparv-sbx-sentence-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentence-sentiment-kb-sent)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sparv-sbx-sentence-sentiment-kb-sent)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/sparv-sbx-sentence-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentence-sentiment-kb-sent/)
+[![PyPI version](https://badge.fury.io/py/sparv-sbx-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sparv-sbx-sentiment-kb-sent)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/sparv-sbx-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
 
 [![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/spraakbanken/getting-started/blob/main/scorecard.md)
-[![Stage](https://img.shields.io/pypi/status/sparv-sbx-sentence-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentence-sentiment-kb-sent/)
+[![Stage](https://img.shields.io/pypi/status/sparv-sbx-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
 
-[![CI(check)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/check.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/check.yml)
-[![CI(test)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/test.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/test.yml)
-[![CI(scheduled)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/scheduled.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/scheduled.yml)
-[![CI(release)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/release-sentence-sentiment-kb-sent.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-analysis/actions/workflows/release-sentence-sentiment-kb-sent.yml)
-[![Codecov](https://codecov.io/gh/spraakbanken/sparv-sbx-sentiment-analysis/coverage.svg)](https://codecov.io/gh/spraakbanken/sparv-sbx-sentiment-analysis)
+[![CI(check)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/check.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/check.yml)
+[![CI(test)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/test.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/test.yml)
+[![CI(scheduled)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/scheduled.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/scheduled.yml)
+[![CI(release)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/release-sentence-sentiment-kb-sent.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/release-sentence-sentiment-kb-sent.yml)
+[![Codecov](https://codecov.io/gh/spraakbanken/sparv-sbx-sentiment-kb-sent/coverage.svg)](https://codecov.io/gh/spraakbanken/sparv-sbx-sentiment-kb-sent)
 
 Plugin for computing sentiment as a [Sparv](https://github.com/spraakbanken/sparv) annotation.
 
@@ -25,10 +25,10 @@ First, install Sparv as suggested:
 pipx install sparv
 ```
 
-Then install install `sparv-sbx-sentence-sentiment-kb-sent` with
+Then install install `sparv-sbx-sentiment-kb-sent` with
 
 ```bash
-pipx inject sparv sparv-sbx-sentence-sentiment-kb-sent
+pipx inject sparv sparv-sbx-sentiment-kb-sent
 ```
 
 ### With [uv-pipx](https://github.com/pytgaen/uv-pipx)
@@ -39,10 +39,10 @@ First, install Sparv as recommended:
 uvpipx install sparv
 ```
 
-Then install `sparv-sbx-sentence-sentiment-kb-sent` with
+Then install `sparv-sbx-sentiment-kb-sent` with
 
 ```shell
-uvpipx install sparv-sbx-sentence-sentiment-kb-sent --inject sparv
+uvpipx install sparv-sbx-sentiment-kb-sent --inject sparv
 ```
 
 ## Usage
@@ -53,7 +53,7 @@ annotation exclusively by adding it as the only annotation to export under `xml_
 ```yaml
 xml_export:
   annotations:
-    - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
+    - <sentence>:sbx_sentiment_kb_sent.sentence-sentiment--kb-sent
 ```
 
 To use it together with other annotations you might add it under `export`:
@@ -61,7 +61,7 @@ To use it together with other annotations you might add it under `export`:
 ```yaml
 export:
     annotations:
-        - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
+        - <sentence>:sbx_sentiment_kb_sent.sentence-sentiment--kb-sent
         ...
 ```
 
@@ -74,7 +74,7 @@ You can configure this plugin in the following way.
 The number of decimals defaults to `3` but can be configured in `config.yaml`:
 
 ```yaml
-sbx_sentence_sentiment_kb_sent:
+sbx_sentiment_kb_sent:
   num_decimals: 3
 ```
 
@@ -117,8 +117,8 @@ This repository is licensed under the [MIT](./LICENSE) license.
 For starting to develop on this repository:
 
 - Clone the repo (in one of the ways below): (in one of the ways below):
-  - `git clone git@github.com:spraakbanken/sparv-sbx-sentiment-analysis.git`
-  - `git clone https://github.com/spraakbanken/sparv-sbx-sentiment-analysis.git`
+  - `git clone git@github.com:spraakbanken/sparv-sbx-sentiment-kb-sent.git`
+  - `git clone https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent.git`
 - Setup environment: `make dev`
 - Install `pre-commit` hooks: `pre-commit install`
 
@@ -139,14 +139,14 @@ This repo uses [conventional commits](https://www.conventionalcommits.org/en/v1.
 
 ### Release a new version
 
-#### sparv-sbx-sentence-sentiment-kb-sent
+#### sparv-sbx-sentiment-kb-sent
 
-- Prepare the CHANGELOG: `make sparv-sbx-sentence-sentiment-kb-sent/CHANGELOG.md`.
+- Prepare the CHANGELOG: `make sparv-sbx-sentiment-kb-sent/CHANGELOG.md`.
 - Edit `CHANGELOG.md` to your liking.
 - Add to git: `git add --update`
 - Commit with `git commit -m 'chore(release): prepare release'` or `cog commit chore 'prepare release' release`.
 - Bump version (depends on [`bump-my-version](https://callowayproject.github.io/bump-my-version/))
-  - First `cd sparv-sbx-sentence-sentiment-kb-sent`
+  - First `cd sparv-sbx-sentiment-kb-sent`
   - Major: `make bumpversion part=major`
   - Minor: `make bumpversion part=minor`
   - Patch: `make bumpversion part=patch` or `make bumpversion`

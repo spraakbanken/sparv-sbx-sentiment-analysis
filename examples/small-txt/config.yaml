@@ -1,19 +1,19 @@
 metadata:
-    id: example-small-txt
-    language: swe
+  id: example-small-txt
+  language: swe
 
 import:
-    importer: text_import:parse
+  importer: text_import:parse
 
-sbx_sentence_sentiment_kb_sent:
-    num_decimals: 3
+sbx_sentiment_kb_sent:
+  num_decimals: 3
 
 export:
-    annotations:
-        - <sentence>
-        # - <token:word>
-        - <token>:stanza.pos
-        - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
+  annotations:
+    - <sentence>
+    # - <token:word>
+    - <token>:stanza.pos
+    - <sentence>:sbx_sentiment_kb_sent.sentence-sentiment--kb-sent
 
 sparv:
-    compression: none
+  compression: none

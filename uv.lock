@@ -8,7 +8,7 @@ resolution-markers = [
 
 [manifest]
 members = [
-    "sparv-sbx-sentence-sentiment-kb-sent",
+    "sparv-sbx-sentiment-kb-sent",
     "sparv-sbx-sentence-sentiment-workspace",
 ]
 
@@ -1536,9 +1536,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "sparv-sbx-sentence-sentiment-kb-sent"
-version = "0.2.1"
-source = { editable = "sparv-sbx-sentence-sentiment-kb-sent" }
+name = "sparv-sbx-sentiment-kb-sent"
+version = "0.3.0"
+source = { editable = "sparv-sbx-sentiment-kb-sent" }
 dependencies = [
     { name = "sparv" },
     { name = "transformers" },

@@ -34,7 +34,7 @@ requires = ["uv_build>=0.9.4,<0.10.0"]
 build-backend = "uv_build"
 
 [project.entry-points."sparv.plugin"]
-sbx_sentence_sentiment_kb_sent = "sbx_sentence_sentiment_kb_sent"
+sbx_sentiment_kb_sent = "sbx_sentiment_kb_sent"
 
 [project.urls]
 Homepage = "https://spraakbanken.gu.se"
