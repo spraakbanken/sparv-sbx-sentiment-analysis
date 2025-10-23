@@ -38,8 +38,8 @@ sbx_sentiment_kb_sent = "sbx_sentiment_kb_sent"
 
 [project.urls]
 Homepage = "https://spraakbanken.gu.se"
-Repository = "https://github.com/spraakbanken/sparv-sbx-sentence-sentiment-analysis"
-"Bug Tracker" = "https://github.com/spraakbanken/sparv-sbx-sentence-sentiment-analysis/labels/project%3Asentence-sentiment--kb-sent"
+Repository = "https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent"
+"Bug Tracker" = "https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/issues"
 
 [dependency-groups]
 dev = [
