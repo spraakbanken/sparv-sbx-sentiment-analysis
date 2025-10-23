@@ -1,5 +1,6 @@
 import pytest
-from sbx_sentence_sentiment_kb_sent.sentiment_analyzer import SentimentAnalyzer
+
+from sbx_sentiment_kb_sent.sentiment_analyzer import SentimentAnalyzer
 
 
 @pytest.fixture(name="sentiment_analyzer", scope="session")

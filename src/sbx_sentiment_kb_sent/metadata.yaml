@@ -20,7 +20,7 @@ keywords:
   - transformers
   - kb-lab
 annotations:
-  - <sentence>:sbx_sentence_sentiment_kb_sent.sentence-sentiment--kb-sent
+  - <sentence>:sbx_sentiment_kb_sent.sentence-sentiment--kb-sent
 example_output: |-
   ```xml
   <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.946|">

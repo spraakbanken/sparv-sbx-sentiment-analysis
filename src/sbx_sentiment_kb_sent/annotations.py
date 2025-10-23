@@ -2,16 +2,16 @@
 
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 
-from sbx_sentence_sentiment_kb_sent.constants import PROJECT_NAME
+from sbx_sentiment_kb_sent.constants import PROJECT_NAME
 
 logger = sparv_api.get_logger(__name__)
 
 
 @sparv_api.annotator("Sentiment analysis of sentences", language=["swe"])
-def annotate_sentence_sentiment(
+def annotate_sentence(
     out_sentence_sentiment: sparv_api.Output = sparv_api.Output(
-        f"<sentence>:{PROJECT_NAME}.sentence-sentiment--kb-sent",
-        # cls="sbx_sentence_sentiment_kb_sent",
+        f"<sentence>:{PROJECT_NAME}.sentiment--kb-sent",
+        # cls="sbx_sentiment_kb_sent",
         description="Sentiment analysis of sentence with KBLab/robust-swedish-sentiment-multiclass",  # noqa: E501
     ),
     word: sparv_api.Annotation = sparv_api.Annotation("<token:word>"),
@@ -19,7 +19,7 @@ def annotate_sentence_sentiment(
     num_decimals_str: str = sparv_api.Config(f"{PROJECT_NAME}.num_decimals"),
 ) -> None:
     """Sentiment analysis of sentence with KBLab/robust-swedish-sentiment-multiclass."""
-    from sbx_sentence_sentiment_kb_sent.sentiment_analyzer import (  # noqa: PLC0415
+    from sbx_sentiment_kb_sent.sentiment_analyzer import (  # noqa: PLC0415
         SentimentAnalyzer,
     )
 
