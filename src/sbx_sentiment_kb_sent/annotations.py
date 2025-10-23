@@ -8,9 +8,9 @@ logger = sparv_api.get_logger(__name__)
 
 
 @sparv_api.annotator("Sentiment analysis of sentences", language=["swe"])
-def annotate_sentence_sentiment(
+def annotate_sentence(
     out_sentence_sentiment: sparv_api.Output = sparv_api.Output(
-        f"<sentence>:{PROJECT_NAME}.sentence-sentiment--kb-sent",
+        f"<sentence>:{PROJECT_NAME}.sentiment--kb-sent",
         # cls="sbx_sentiment_kb_sent",
         description="Sentiment analysis of sentence with KBLab/robust-swedish-sentiment-multiclass",  # noqa: E501
     ),

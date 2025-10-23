@@ -2,10 +2,10 @@
 
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 
-from sbx_sentiment_kb_sent.annotations import annotate_sentence_sentiment
+from sbx_sentiment_kb_sent.annotations import annotate_sentence
 from sbx_sentiment_kb_sent.constants import PROJECT_NAME
 
-__all__ = ["annotate_sentence_sentiment"]
+__all__ = ["annotate_sentence"]
 
 __description__ = "Annotate sentence with sentiment analysis."
 __version__ = "0.3.0"

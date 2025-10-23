@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <text id="fp-1905-v" källa="Hämtat från &quot;Svenska valprogram 1902-1952&quot;, sammanställda av Sven-Olov Håkansson vid Statsvetenskapliga inst. Göteborgs universitet 1959. ISBN 99-0391724-4" party="Folkpartiet liberalerna" party_id="fp" titel="Frisinnade landsföreningens valprogram 1905" type="Valmanifest - Riksdagsval" type_id="v" year="1905">
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.947|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.947|">
     <token pos="VB">FRISINNADE</token>
     <token pos="NN">LANDSFÖRENINGENS</token>
     <token pos="NN">VALPROGRAM</token>
     <token pos="RG">1905</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.878|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.878|">
     <token pos="DT">De</token>
     <token pos="NN">val</token>
     <token pos="PP">till</token>
@@ -37,7 +37,7 @@
     <token pos="NN">land</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|POSITIVE:0.500|">
+  <sentence sentiment--kb-sent="|POSITIVE:0.500|">
     <token pos="JJ">Klarare</token>
     <token pos="KN">än</token>
     <token pos="AB">någonsin</token>
@@ -79,7 +79,7 @@
     <token pos="NN">vådor</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.927|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.927|">
     <token pos="AB">Äfven</token>
     <token pos="DT">denna</token>
     <token pos="NN">gång</token>
@@ -99,7 +99,7 @@
     <token pos="NN">rösträttsfrågan</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.951|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.951|">
     <token pos="PP">I</token>
     <token pos="DT">den</token>
     <token pos="NN">frågan</token>
@@ -112,7 +112,7 @@
     <token pos="NN">spörsmål</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.940|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.940|">
     <token pos="DT">Det</token>
     <token pos="JJ">ena</token>
     <token pos="MID">:</token>
@@ -134,7 +134,7 @@
     <token pos="NN">dagordningen</token>
     <token pos="MAD">?</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.906|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.906|">
     <token pos="DT">Det</token>
     <token pos="JJ">andra</token>
     <token pos="MID">:</token>
@@ -155,7 +155,7 @@
     <token pos="NN">rösträttsförslag</token>
     <token pos="MAD">?</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.905|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.905|">
     <token pos="PP">För</token>
     <token pos="SN">att</token>
     <token pos="NN">valen</token>
@@ -198,7 +198,7 @@
     <token pos="AB">icke</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.779|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.779|">
     <token pos="PN">Det</token>
     <token pos="VB">är</token>
     <token pos="AB">så</token>
@@ -237,7 +237,7 @@
     <token pos="NN">sätt</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.745|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.745|">
     <token pos="VB">Må</token>
     <token pos="AB">alltså</token>
     <token pos="PN">ingen</token>
@@ -260,7 +260,7 @@
     <token pos="NN">sidan</token>
     <token pos="MAD">!</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.637|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.637|">
     <token pos="PP">Till</token>
     <token pos="DT">detta</token>
     <token pos="NN">valsätt</token>
@@ -287,7 +287,7 @@
     <token pos="NN">nej</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.720|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.720|">
     <token pos="PP">För</token>
     <token pos="SN">att</token>
     <token pos="PN">det</token>
@@ -343,7 +343,7 @@
     <token pos="NN">riktning</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.902|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.902|">
     <token pos="PP">Beträffande</token>
     <token pos="JJ">själfva</token>
     <token pos="NN">sättet</token>
@@ -368,7 +368,7 @@
     <token pos="NN">rösträtten</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.920|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.920|">
     <token pos="PP">Med</token>
     <token pos="NN">afseende</token>
     <token pos="PP">å</token>
@@ -390,7 +390,7 @@
     <token pos="PC">förbundna</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.787|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.787|">
     <token pos="NN">Föreningen</token>
     <token pos="VB">vidhåller</token>
     <token pos="DT">denna</token>
@@ -409,7 +409,7 @@
     <token pos="NN">anslutning</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.603|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.603|">
     <token pos="KN">Men</token>
     <token pos="PP">med</token>
     <token pos="DT">de</token>
@@ -478,7 +478,7 @@
     <token pos="VB">skadas</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.709|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.709|">
     <token pos="KN">Ty</token>
     <token pos="DT">ett</token>
     <token pos="JJ">ovillkorlig</token>
@@ -509,7 +509,7 @@
     <token pos="MID">,</token>
     <token pos="AB">d.v.s.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.945|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.945|">
     <token pos="PP">på</token>
     <token pos="PN">dem</token>
     <token pos="MID">,</token>
@@ -526,7 +526,7 @@
     <token pos="NN">valen</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.848|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.848|">
     <token pos="PP">I</token>
     <token pos="NN">fråga</token>
     <token pos="PP">om</token>
@@ -562,7 +562,7 @@
     <token pos="NN">riktning</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.904|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.904|">
     <token pos="RG">Tvenne</token>
     <token pos="JJ">andra</token>
     <token pos="NN">spörsmål</token>
@@ -637,7 +637,7 @@
     <token pos="VB">afhjälpas</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.916|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.916|">
     <token pos="NN">Intetdera</token>
     <token pos="PP">af</token>
     <token pos="DT">dessa</token>
@@ -661,7 +661,7 @@
     <token pos="VB">uppehållas</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.973|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.973|">
     <token pos="NN">Hufvudfrågan</token>
     <token pos="PP">vid</token>
     <token pos="DT">de</token>
@@ -677,7 +677,7 @@
     <token pos="NN">majoritetsval</token>
     <token pos="MAD">?</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.810|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.810|">
     <token pos="KN">Och</token>
     <token pos="NN">hufvuduppgiften</token>
     <token pos="PP">för</token>
@@ -720,7 +720,7 @@
     <token pos="NN">valsätt</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.591|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.591|">
     <token pos="PN">Det</token>
     <token pos="VB">är</token>
     <token pos="DT">en</token>
@@ -743,7 +743,7 @@
     <token pos="NN">rösträttsreformen</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.895|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.895|">
     <token pos="PP">Vid</token>
     <token pos="DT">det</token>
     <token pos="JJ">nya</token>
@@ -762,7 +762,7 @@
     <token pos="VB">infrias</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.576|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.576|">
     <token pos="PN">Det</token>
     <token pos="VB">är</token>
     <token pos="AB">ju</token>
@@ -799,7 +799,7 @@
     <token pos="NN">samhället</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.844|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.844|">
     <token pos="DT">Den</token>
     <token pos="NN">treårsperiod</token>
     <token pos="MID">,</token>
@@ -816,7 +816,7 @@
     <token pos="NN">valmän</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|POSITIVE:0.648|">
+  <sentence sentiment--kb-sent="|POSITIVE:0.648|">
     <token pos="IE">att</token>
     <token pos="VB">sörja</token>
     <token pos="PP">för</token>
@@ -848,7 +848,7 @@
     <token pos="NN">riksdagsperioder</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.838|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.838|">
     <token pos="DT">Det</token>
     <token pos="JJ">konservativa</token>
     <token pos="NN">parti</token>
@@ -868,7 +868,7 @@
     <token pos="NN">maktsställning</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.822|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.822|">
     <token pos="PP">I</token>
     <token pos="NN">utskotten</token>
     <token pos="MID">,</token>
@@ -909,7 +909,7 @@
     <token pos="JJ">slutliga</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.832|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.832|">
     <token pos="DT">Den</token>
     <token pos="JJ">konstitutionella</token>
     <token pos="NN">kontrollen</token>
@@ -919,7 +919,7 @@
     <token pos="NN">styrka</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.521|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.521|">
     <token pos="KN">Och</token>
     <token pos="PP">framför</token>
     <token pos="PN">allt</token>
@@ -933,7 +933,7 @@
     <token pos="VB">afvärjas</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.511|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.511|">
     <token pos="AB">Så</token>
     <token pos="VB">har</token>
     <token pos="NN">försöket</token>
@@ -952,7 +952,7 @@
     <token pos="VB">misslyckats</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.809|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.809|">
     <token pos="AB">Likaså</token>
     <token pos="NN">förslaget</token>
     <token pos="IE">att</token>
@@ -963,7 +963,7 @@
     <token pos="PC">införda</token>
     <token pos="AB">s.k.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.746|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.746|">
     <token pos="NN">Åkarpslagen</token>
     <token pos="VB">läggs</token>
     <token pos="DT">en</token>
@@ -986,7 +986,7 @@
     <token pos="NN">arbetsaftal</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.673|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.673|">
     <token pos="KN">Och</token>
     <token pos="NN">afsättningen</token>
     <token pos="PP">till</token>
@@ -1000,7 +1000,7 @@
     <token pos="VB">föreslagit</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.816|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.816|">
     <token pos="PN">Det</token>
     <token pos="VB">gäller</token>
     <token pos="AB">nu</token>
@@ -1013,7 +1013,7 @@
     <token pos="VB">vunnits</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.851|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.851|">
     <token pos="PP">för</token>
     <token pos="IE">att</token>
     <token pos="MID">_</token>
@@ -1030,7 +1030,7 @@
     <token pos="NN">reformarbete</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.938|POSITIVE:0.798|NEGATIVE:0.759|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.938|POSITIVE:0.798|NEGATIVE:0.759|">
     <token pos="PC">Frisinnade</token>
     <token pos="NN">landsföreningen</token>
     <token pos="MID">,</token>
@@ -1367,7 +1367,7 @@
     <token pos="PN">de</token>
     <token pos="AB">s.k.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.655|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.655|">
     <token pos="JJ">lägre</token>
     <token pos="NN">statstjänarne</token>
     <token pos="MID">,</token>
@@ -1403,7 +1403,7 @@
     <token pos="JJ">viktiga</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.733|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.733|">
     <token pos="NN">område</token>
     <token pos="VB">vilja</token>
     <token pos="VB">verka</token>
@@ -1463,7 +1463,7 @@
     <token pos="NN">alkoholfrågan</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.802|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.802|">
     <token pos="PC">Frisinnade</token>
     <token pos="NN">landsföreningen</token>
     <token pos="VB">förväntar</token>
@@ -1486,7 +1486,7 @@
     <token pos="NN">organisationer</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.864|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.864|">
     <token pos="PP">Med</token>
     <token pos="NN">rätta</token>
     <token pos="VB">betonar</token>
@@ -1526,14 +1526,14 @@
     <token pos="NN">ordet</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.932|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.932|">
     <token pos="NN">Tankegången</token>
     <token pos="VB">låter</token>
     <token pos="VB">utvidga</token>
     <token pos="PN">sig</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.889|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.889|">
     <token pos="NN">Striden</token>
     <token pos="PP">för</token>
     <token pos="NN">framsteg</token>
@@ -1553,7 +1553,7 @@
     <token pos="NN">kammaren</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.955|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.955|">
     <token pos="VB">Skall</token>
     <token pos="DT">den</token>
     <token pos="JJ">svenska</token>
@@ -1567,7 +1567,7 @@
     <token pos="VB">utstakar</token>
     <token pos="MAD">?</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.941|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.941|">
     <token pos="NN">Skola</token>
     <token pos="PP">för</token>
     <token pos="JJ">hela</token>
@@ -1579,7 +1579,7 @@
     <token pos="NN">kammaren</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.714|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.714|">
     <token pos="NN">former</token>
     <token pos="VB">förhalas</token>
     <token pos="KN">eller</token>
@@ -1595,7 +1595,7 @@
     <token pos="NN">skick</token>
     <token pos="MAD">?</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.680|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.680|">
     <token pos="VB">Må</token>
     <token pos="DT">alla</token>
     <token pos="PC">frisinnade</token>
@@ -1620,7 +1620,7 @@
     <token pos="NN">frågorna</token>
     <token pos="MAD">!</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|POSITIVE:0.536|">
+  <sentence sentiment--kb-sent="|POSITIVE:0.536|">
     <token pos="VB">Må</token>
     <token pos="PN">de</token>
     <token pos="PP">genom</token>

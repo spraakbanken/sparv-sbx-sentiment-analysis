@@ -13,7 +13,7 @@ export:
     - <sentence>
     # - <token:word>
     - <token>:stanza.pos
-    - <sentence>:sbx_sentiment_kb_sent.sentence-sentiment--kb-sent
+    - <sentence>:sbx_sentiment_kb_sent.sentiment--kb-sent
 
 sparv:
   compression: none

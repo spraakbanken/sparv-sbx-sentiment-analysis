@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <text>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.946|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.946|">
     <token pos="JJ">Stora</token>
     <token pos="NN">regnmängder</token>
     <token pos="VB">väntas</token>
@@ -25,7 +25,7 @@
     <token pos="JJ">halva</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.613|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.613|">
     <token pos="PN">Jag</token>
     <token pos="VB">är</token>
     <token pos="PC">förvånad</token>
@@ -46,7 +46,7 @@
     <token pos="PM">Småland</token>
     <token pos="MAD">.</token>
   </sentence>
-  <sentence sentence-sentiment--kb-sent="|NEUTRAL:0.910|">
+  <sentence sentiment--kb-sent="|NEUTRAL:0.910|">
     <token pos="PN">Vi</token>
     <token pos="VB">hoppas</token>
     <token pos="KN">och</token>
