@@ -154,18 +154,16 @@ This repo uses [conventional commits](https://www.conventionalcommits.org/en/v1.
 
 #### sparv-sbx-sentiment-kb-sent
 
-- Prepare the CHANGELOG: `make sparv-sbx-sentiment-kb-sent/CHANGELOG.md`.
+- Prepare the CHANGELOG: `make prepare-release`.
 - Edit `CHANGELOG.md` to your liking.
 - Add to git: `git add --update`
 - Commit with `git commit -m 'chore(release): prepare release'` or `cog commit chore 'prepare release' release`.
 - Bump version (depends on [`bump-my-version](https://callowayproject.github.io/bump-my-version/))
-  - First `cd sparv-sbx-sentiment-kb-sent`
   - Major: `make bumpversion part=major`
   - Minor: `make bumpversion part=minor`
   - Patch: `make bumpversion part=patch` or `make bumpversion`
-  - Go back to repo root `cd -`
 - Push `main` and tags to GitHub: `git push main --tags` or `make publish`
   - [GitHub Actions workflow](./.github/workflows/release-sentence-sentiment-kb-sent.yaml) will build, test and publish the package to [PyPi](https://pypi.prg).
 - Add metadata for [Språkbanken's resource](https://spraakbanken.gu.se/resurser)
   - Generate metadata: `make generate-metadata`
-  - Upload the files from `assets/metadata/export/sbx_metadata/utility` to <https://github.com/spraakbanken/metadata/tree/main/yaml/utility>.
+  - Upload the files from `assets/metadata/export/sbx_metadata/analysis` to <https://github.com/spraakbanken/metadata/tree/main/yaml/analysis>.

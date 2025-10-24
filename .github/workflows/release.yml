@@ -131,7 +131,7 @@ jobs:
 
     needs:
       - test-build
-    if: success() && startsWith(github.ref, 'refs/tags/sentence-sentiment-kb-sent-v')
+    if: success() && startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     environment: release
     permissions:
