@@ -1,8 +1,8 @@
 # sparv-sbx-sentiment-kb-sent
 
-[![PyPI version](https://badge.fury.io/py/sparv-sbx-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sparv-sbx-sentiment-kb-sent)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/sparv-sbx-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
+[![PyPI version](https://img.shields.io/pypi/v/sparv-sbx-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
+[![PyPI license](https://img.shields.io/pypi/l/sparv-sbx-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
+[![PyPI - Python Versions](https://img.shields.io/pypi/pyversions/sparv-sbx-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent)
 
 [![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/spraakbanken/getting-started/blob/main/scorecard.md)
 [![Stage](https://img.shields.io/pypi/status/sparv-sbx-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
