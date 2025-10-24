@@ -1,8 +1,5 @@
 #y yaml-language-server: $schema=https://github.com/spraakbanken/metadata/raw/refs/heads/main/schema/metadata.json
 id: sbx-swe-sentiment_sentence-transformers-kblab_robust_swedish_sentiment_multiclass
-name:
-  swe: Sentimentanalys per mening med KBLab/robust-swedish-sentiment-multiclass
-  eng: Sentiment analysis per sentence using KBLab/robust-swedish-sentiment-multiclass
 short_description:
   swe: Sentimentanalys per mening med KBLab/robust-swedish-sentiment-multiclass
   eng: Sentiment analysis per sentence using KBLab/robust-swedish-sentiment-multiclass
