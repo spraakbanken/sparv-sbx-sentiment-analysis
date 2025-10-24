@@ -5,7 +5,7 @@
 [![PyPI - Python Versions](https://img.shields.io/pypi/pyversions/sparv-sbx-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent)
 
 [![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/spraakbanken/getting-started/blob/main/scorecard.md)
-[![Stage](https://img.shields.io/pypi/status/sparv-sbx-sentiment-kb-sent)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
+[![Stage](https://img.shields.io/pypi/status/sparv-sbx-sentiment-kb-sent.svg)](https://pypi.org/project/sparv-sbx-sentiment-kb-sent/)
 
 [![CI(check)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/check.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/check.yml)
 [![CI(test)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/test.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/actions/workflows/test.yml)
