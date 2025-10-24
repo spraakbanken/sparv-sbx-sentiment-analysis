@@ -1,17 +1,14 @@
 id: sbx-swe-sentiment-transformers-kblab_robust_swedish_sentiment_multiclass
-name:
-    swe: Sentimentanalys per mening med KBLab/robust-swedish-sentiment-multiclass
-    eng: Sentiment analysis per sentence using KBLab/robust-swedish-sentiment-multiclass
 short_description:
-    swe: Sentimentanalys per mening med KBLab/robust-swedish-sentiment-multiclass
-    eng: Sentiment analysis per sentence using KBLab/robust-swedish-sentiment-multiclass
+    swe: "Denna analys har bytt namn: https://spraakbanken.gu.se/analyser/sbx-swe-sentiment_sentence-transformers-kblab_robust_swedish_sentiment_multiclass"
+    eng: "This analysis has changed name: https://spraakbanken.gu.se/en/analyses/sbx-swe-sentiment_sentence-transformers-kblab_robust_swedish_sentiment_multiclass"
 description:
     swe: |-
-        Sentimentanalys per mening med [transformers](https://github.com/Huggingface/transformers)
-        och [KBLab/robust-swedish-sentiment-multiclass](https://huggingface.co/KBLab/robust-swedish-sentiment-multiclass).
+        Denna analys har bytt namn:
+        https://spraakbanken.gu.se/analyser/sbx-swe-sentiment_sentence-transformers-kblab_robust_swedish_sentiment_multiclass
     eng: |-
-        Sentiment analysis per sentence using [transformers](https://github.com/Huggingface/transformers)
-        with [KBLab/robust-swedish-sentiment-multiclass](https://huggingface.co/KBLab/robust-swedish-sentiment-multiclass).
+        This analysis has changed name:
+        https://spraakbanken.gu.se/en/analyses/sbx-swe-sentiment_sentence-transformers-kblab_robust_swedish_sentiment_multiclass
 task: sentiment analysis
 language_codes:
     - swe

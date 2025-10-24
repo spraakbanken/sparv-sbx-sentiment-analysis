@@ -1,5 +1,7 @@
 """Sparv plugin for annotating sentences with sentiment analysis."""
 
+import warnings
+
 from sparv import api as sparv_api  # type: ignore [import-untyped]
 
 from sbx_sentence_sentiment_kb_sent.annotations import annotate_sentence_sentiment
@@ -17,3 +19,8 @@ __config__ = [
         default=3,
     ),
 ]
+warnings.warn(
+    "This package has changed name to sparv-sbx-sentiment-kb-sent, please install https://pypi.org/project/sparv-sbx-sentiment-kb-sent instead",  # noqa: E501
+    UserWarning,
+    stacklevel=1,
+)

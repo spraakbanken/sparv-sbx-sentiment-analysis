@@ -14,7 +14,7 @@ license = "MIT"
 readme = "README.md"
 requires-python = ">= 3.11"
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 7 - Inactive",
     # "Development Status :: 4 - Beta",
     # "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -42,8 +42,8 @@ sbx_sentence_sentiment_kb_sent = "sbx_sentence_sentiment_kb_sent"
 
 [project.urls]
 Homepage = "https://spraakbanken.gu.se"
-Repository = "https://github.com/spraakbanken/sparv-sbx-sentence-sentiment-analysis"
-"Bug Tracker" = "https://github.com/spraakbanken/sparv-sbx-sentence-sentiment-analysis/labels/project%3Asentence-sentiment--kb-sent"
+Repository = "https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent"
+"Bug Tracker" = "https://github.com/spraakbanken/sparv-sbx-sentiment-kb-sent/issues"
 
 [tool.hatch.build.targets.sdist]
 exclude = ["/.github", "/docs"]
