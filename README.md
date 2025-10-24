@@ -25,7 +25,13 @@ First, install Sparv as suggested:
 pipx install sparv
 ```
 
-Then install install `sparv-sbx-sentiment-kb-sent` with
+Then install `sparv-sbx-sentiment-kb-sent` with
+
+```bash
+sparv plugins install sparv-sbx-sentiment-kb-sent
+```
+
+or, you can also install `sparv-sbx-sentiment-kb-sent` with
 
 ```bash
 pipx inject sparv sparv-sbx-sentiment-kb-sent
@@ -41,6 +47,12 @@ uvpipx install sparv
 
 Then install `sparv-sbx-sentiment-kb-sent` with
 
+```bash
+sparv plugins install sparv-sbx-sentiment-kb-sent
+```
+
+or, you can also install `sparv-sbx-sentiment-kb-sent` with
+
 ```shell
 uvpipx install sparv-sbx-sentiment-kb-sent --inject sparv
 ```
@@ -53,7 +65,7 @@ annotation exclusively by adding it as the only annotation to export under `xml_
 ```yaml
 xml_export:
   annotations:
-    - <sentence>:sbx_sentiment_kb_sent.sentence-sentiment--kb-sent
+    - <sentence>:sbx_sentiment_kb_sent.sentiment--kb-sent
 ```
 
 To use it together with other annotations you might add it under `export`:
@@ -61,7 +73,7 @@ To use it together with other annotations you might add it under `export`:
 ```yaml
 export:
     annotations:
-        - <sentence>:sbx_sentiment_kb_sent.sentence-sentiment--kb-sent
+        - <sentence>:sbx_sentiment_kb_sent.sentiment--kb-sent
         ...
 ```
 
@@ -96,6 +108,7 @@ least bump the minor version when support for a Python version is dropped.
 
 The following versions of this library supports these Python versions:
 
+- v0.4: Python 3.11
 - v0.3: Python 3.11
 - v0.2: Python 3.8
 
