@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+### Documentation
+
+- Fix some errors in the README.md
+
+## [0.4.0] - 2025-10-24
+
+### Changed
+
+- Move source to repo root by [@kod-kristoff](https://github.com/kod-kristoff)
+- Change repo and module name by [@kod-kristoff](https://github.com/kod-kristoff)
+- Rename annotation and function name by [@kod-kristoff](https://github.com/kod-kristoff)
+
+### Documentation
+
+- Add link to release workflow by [@kod-kristoff](https://github.com/kod-kristoff)
+
+### Fixed
+
+- Do not move model to cuda by [@kod-kristoff](https://github.com/kod-kristoff)
+
+### Miscellaneous Tasks
+
+- Update metadata id by [@kod-kristoff](https://github.com/kod-kristoff)
+
 ## [0.4.0] - 2025-10-24
 
 > [!NOTE] Released as [`sparv-sbx-sentiment-kb-sent`](https://pypi.org/project/sparv-sbx-sentiment-kb-sent)
