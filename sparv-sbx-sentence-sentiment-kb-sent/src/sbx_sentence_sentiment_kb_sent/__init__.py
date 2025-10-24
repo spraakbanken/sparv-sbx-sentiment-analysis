@@ -10,7 +10,7 @@ from sbx_sentence_sentiment_kb_sent.constants import PROJECT_NAME
 __all__ = ["annotate_sentence_sentiment"]
 
 __description__ = "Annotate sentence with sentiment analysis."
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 __config__ = [
     sparv_api.Config(
